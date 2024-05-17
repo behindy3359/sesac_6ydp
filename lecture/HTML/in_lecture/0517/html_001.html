@@ -1,0 +1,39 @@
+<!-- emmet : 코드 구조를 자동으로 만들어 줌 (! + tab : 자동으로 html5 구조를 만들어 줌)-->
+<!DOCTYPE html>
+<html lang="ko"> 
+    <!-- lang : 언어를 설정 , 언어를 한국어로!-->
+
+    <head>
+        <meta charset="UTF-8"> 
+        <!-- 인코딩 방식 지정 / 인코딩?! - 사람이 작성한 코드를 컴퓨터가 이해하는 코드로 변경할 때 거치는 방식 -->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- 모바일/ 반응형 웹에서 인식할 수 있는 태그-->
+        
+        <title> Document </title>
+        <!-- 문서의 제목, 브라우저의 상단에 표시될 제목-->
+    </head>
+    
+    <body> <!-- 브라우저 화면에서 보여주고 싶은 내용 -->
+        
+        <h1>제제목목</h1><hr>
+        
+        <!-- 태그이름 + tab : 자동으로 닫는태그를 만들어 줌! -->
+        <h2> 나의 첫 html 문서입니다!</h2>
+        <div> 안녕하세요, 가갸거겨 </div>
+
+        <!-- 중첩( nested ) -->
+        <!-- div : 블록요소 / span : 인라인( inline )요소 -->
+        <div style="background-color: burlywood;">
+            span의 parent
+            <span style="background-color: beige;"> div 의 child1</span>
+            <span style="background-color: palegreen;"> div 의 child2</span>
+        </div>
+        <div style="background-color: powderblue;">
+            또다른 div
+            <span style="background-color: beige;"> 또다른 div 의 child</span>
+        </div>
+
+        <!-- 들여쓰기, 내어쓰기를 이용해서 중첩관계를 표현할 때, 같은 수준은 같은 들여쓰기를 갖도록 하자. -->
+    </body>
+</html>
