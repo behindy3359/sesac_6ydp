@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>이미지 태그</h2>
+        <!--상대경로 : 현재 파일의 위치를 기준으로 하는 파일 경로,
+                    - 프로젝트의 위치가 바뀌어도 그대로 사용할 수 있다는 장점 
+                    - 목적 파일의 위치가 바뀐다면 상대경로를 수정해야 한다는 단점
+                    ex) ./src/img.png ../../img/img.png-->
+        <!--절대경로 : root(맨 처음, 최상단)부터 해당 파일까지의 경로
+                    - 내 로컬 환경에서는 어느 곳에서든 같은 주소를 이용해 접근 가능하다는 장점
+                    - 다른 로컬에서는 절대 경로가 실제로 동일해야만 접근이 가능하다는 단점. 
+                    ex) https://www.naver.com, c:/Users/... -->
+        <img src="../../../../image/phantom.webp" width="150" alt="rel_route_phantom.webp">
+        <img src="/Users/sba/Documents/github/sesac_6ydp/HTML/image/phantom.webp" height="150" alt="abs_route_phantom.webp">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" height="150" alt="abs_route_phantom.webp">
+        <hr>
+        <!-- a tag target attribute : 링크가 열릴 위치 지정
+            - _self (default) : 현재 탭에서 열기
+            - _blank : 새 탭으로 열기-->
+        <a href="https://www.naver.com">네이버 바로가기</a>
+        <a href="https://www.naver.com" target="_blank" title="마우스를 올리면 나타나는 제목!">네이버 바로가기</a>
+        <a href="./html_001.html" title="html_001.html">html_001.html</a>
+    
+    
+    </body>
+</html>
