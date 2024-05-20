@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 과 form요소</title>
+</head>
+<body> 
+    <h1> 폼 관련 태그를 알아보자!</h1><hr>
+    <!-- form 태그 속성
+        action, method, 서버가 있어야 활용 가능 
+         - action : 사용자가 form 에 입력한 값을 전달할 주소
+         - method : 사용자가 form 에 입력한 값을 전달할 방법
+        => 위 두가지 속성은 "서버"와 연관된 내용 -> 백엔드 진도 나갈 때 다시 소개
+    -->
+    <form>
+        <!-- form 요소 : 폼 태그 안에 있는 사용자의 입력값을 받는 요소
+            input, textarea, select... 태그들에는 name 속성을 가질 수 있다. - 서버와 연관되어 있다.
+        -->
+        Text : <input type="text" placeholder="텍스트를 입력해주세요" ><br>
+        Text2: <input type="text" placeholder="텍스트를 입력해보시지" disabled> 
+        <!-- disabled 속성은 편집을 불가능하게 막는다! -->
+        <hr>
+        <label for="user_email">이메일</label>
+        <input type="text" id="user_email" placeholder=”xxx@xxxx.xxx” name=""><br>
+        <input type="password" placeholder="비밀번호를 입력해주세요"><br>
+        <hr>
+        <input type="color"><br>
+        <input type="range"><br>
+        <input type="file"><br>
+        <input type="number"><br>
+        <input type="date"><br>
+
+        <hr>
+        <!--
+            radio input vs checkbox input
+            radio, checkbox input : 같은 name 속성값을 부여해서 "카테고리"화 해줘야 함
+            name : 서버 입장에서 어떤 값이 들어왔는지 분류하기 위해 구분하는 값
+            동적 폼 전송, 폼 전송할 때 다시~
+        -->
+        <h5>당신의 취미는 무엇인가요?</h5>
+        <input type="checkbox" name="interest" value="basketball" >농구
+        <input type="checkbox" name="interest" value="movie" checked>영화
+        <input type="checkbox" name="interest" value="lay-down">누워있기
+
+        <h5>당신의 성별은 무엇인가요?</h5>
+        <input type="radio" id="female" name="gender" value="female"><label for="female">female</label>
+        <input type="radio" id="male" name="gender" value="male"><label for="male">male</label>
+        <hr>
+        <textarea placeholder="문의 사 항 을 입력 해 주 세 요" cols="30" rows="10"></textarea>
+        <hr>
+        <select name="flowers">
+            <option value="꽃1">꽃1</option>
+            <option value="꽃2" select>꽃2</option>
+            <option value="꽃3">꽃3</option>
+            <option value="꽃4">꽃4</option>
+        </select>
+        <select name="점심메뉴">
+            <optgroup label="korean">
+                <option value="corn_cheese">콘치즈</option>
+                <option value="three_layer_fork">삼겹살</option>
+                <option value="cool_noodle">냉면</option>
+            </optgroup>
+            <optgroup label="chineses">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </optgroup>
+        </select>
+        <hr>
+        <!-- 
+            버튼을 만들 수 있는 태그는 다수 존재
+             1. input 태그의 type을 이용해 버튼을 만들기
+             2. 별도의 button 태그를 이용해 버튼을 만들기
+
+             단순버튼 : 클릭 가능한 버튼
+             제출버튼 : 폼을 제출해 서버로 넘기는 버튼
+        -->
+        <!--단순 버튼 1 : 클릭 가능한 버튼-->
+        <input type="button" value="눌러보시지">
+        <!--단순 버튼 2 : 클릭 가능한 버튼-->
+        <button type="button">눌러보시지</button>
+        <!-- 기능적으로 동일, 사용하는 속성의 차이만 존재 -->
+        <!--제출 버튼 1 : 제출 가능한 버튼-->
+        <input type="submit" value="제출버튼1">
+        <!--제출 버튼 2 : 제출 가능한 버튼-->
+        <button type="submit">제출버튼2</button>
+        
+        <!-- button태그의 속성 
+            참고. type 속성을 생략한 button태그
+            - type 속성: button, submit 값 사용 가능
+            
+            - button type : 폼 태그 바깥에 button 태그가 있을 때 기본 값  
+            - submit type : 폼 태그 내부에 button 태그가 있을 때 기본 값
+        -->
+        
+        <button>버튼 1</button>
+    </form>
+    <button>버튼 2</button>
+</body>
+</html>
