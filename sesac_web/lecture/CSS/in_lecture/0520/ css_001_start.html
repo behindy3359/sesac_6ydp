@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS 참조 방식</title>
+    <!-- 참조하려는 css 파일을 링크한다. -->
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        ul{
+            background-color: aqua;
+        }
+        h1, h2 {
+            color: pink;
+        }
+    </style>
 </head>
 <body>
-    
+    <!--CSS참조 방식 1. inline 방식 -->
+    <h1 style="color: blue;">CSS 사용법을 익혀봅시다!</h1>
+    <h2 style="font-size: larger;">HELLO WORLD!</h2>
+    <h2 style="font-size: smaller;">HELLO WORLD!</h2>
+
+    <!--CSS참조 방식 2. 내장 방식 -->
+    <ul>
+        <li>1 하나 one</li>
+        <li>2  둘 two</li>
+        <li>3  셋 three</li>
+    </ul>
+
+    <!--CSS참조 방식 3. 링크 방식-->
 </body>
 </html>
