@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
+    <!-- 외부스타일시트( CSS )파일로부터 링크를 받아 스타일을 적용-->
+    <style>
+        div{
+            background: white;
+            width: 350;
+            height: 350;
+        }
+    </style>
+    <!-- 내부의 Style 을 참조해 css를 적용, 파일에 적용해서 받아오는것과 유사-->
 </head>
 <body>
     <span>무지개</span>
-    <table width="50px" height="50">
-        <tr>
-            <td style="background-color: red;" width="50px" height="50"> </td>
-            <td colspan="6" width="50px" height="50"></td>
-        </tr>
-        <tr>
-            <td colspan="2" style="background-color: orange;" width="50px" height="50"> </td>
-            <td colspan="5" width="50px" height="50"></td>
-        </tr>
-        <tr>
-            <td colspan="3" style="background-color: yellow;" width="50px" height="50"> </td>
-            <td colspan="4" width="50px" height="50"></td>
-        </tr>
-    </table>
-    
+    <div>
+        <div style="background-color: red; height: 50px; width: 50px;"></div>
+        <div style="background-color: orange; height: 50px; width: 100px;"></div>
+        <div style="background-color: yellow; height: 50px; width: 150px;"></div>
+        <div style="background-color: green; height: 50px; width: 200px;"></div>
+        <div style="background-color: blue; height: 50px; width: 250px;"></div>
+        <div style="background-color: darkblue; height: 50px; width: 300px;"></div>
+        <div style="background-color: purple; height: 50px; width: 350px;"></div>
+    </div>
 </body>
 </html>
