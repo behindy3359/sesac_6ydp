@@ -22,7 +22,7 @@ body section h2{
 
 }
 /* 일반 형제 선택자 : ( ~ ) */
-#lion ~li{
+#lion ~ *{
     color : rgba(45, 175, 106, 0.967)
 }
 /* css색상에 관해서 */
