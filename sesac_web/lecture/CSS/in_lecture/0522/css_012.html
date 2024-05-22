@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index_0522_ex.css">
+    <title>선택자 종합 실습</title>
+    <style>
+        form {
+          width: 400px;
+        }
+  
+        /* focus */
+        textarea {
+          width: 100%;
+        }
+        /* checked */
+        /* active */
+        button {
+          float: right;
+          padding: 5px 15px;
+          background-color: #f96666;
+          color: white;
+          font-size: 17px;
+          border-radius: 10px;
+          border: none;
+        }
+      </style>
+</head>
+<body>
+      <h3>건의 사항을 적어주세요!</h3>
+      <form>
+        <textarea id="textarea1" style="height: 200px; width: 400px;" placeholder="건의 사항🎈"></textarea>        
+        <input type="checkbox" id="checkbox1" name="color"/><label for="checkbox1">빨강</label>
+        <input type="checkbox" id="checkbox2" name="color"/><label for="checkbox2">파랑</label>
+        <input type="checkbox" id="checkbox3" name="color"/><label for="checkbox3">노랑</label>
+        <button>제출</button>
+      </form>
+</body>
+</html>

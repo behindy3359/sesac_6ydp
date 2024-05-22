@@ -1,0 +1,22 @@
+/* 
+    웹 폰트! 
+    글꼴 바꾸기 
+    - 모든 브라우저에서 보는 폰트를 통일
+    - 다운로드받는것이 아닌 링크태그에 걸려있는 주소에서 폰트를 가져오는 방식
+    - 보통 기본 폰트는 body 태그에 작성
+*/
+h1 {
+    font-family: "Freeman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'YEONGJUSeonbiTTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403@1.0/YEONGJUSeonbiTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+div{
+    font-family:'YEONGJUSeonbiTTF';
+}

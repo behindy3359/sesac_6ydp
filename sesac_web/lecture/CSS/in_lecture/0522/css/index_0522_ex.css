@@ -1,0 +1,22 @@
+h3:hover{
+    background-color: black;
+    color: white;
+}
+#textarea1:focus{
+    background-color: lightcoral;
+    border-width: 10px;
+    border-color: black;
+}
+input[type="checkbox"]:checked + label[for="checkbox1"] {
+    background-color: red;
+}
+input[type="checkbox"]:checked + label[for="checkbox2"] {
+    background-color: blue;
+}
+input[type="checkbox"]:checked + label[for="checkbox3"] {
+    background-color: yellow;
+}
+button:active{
+    color: red;
+    background-color: grey;
+}
