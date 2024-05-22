@@ -1,0 +1,28 @@
+/* 하위 후손 선택자 : (  )*/
+body section{
+    border: 1px solid blue;
+}
+body section h2{
+    border: 1px solid plum;
+}     
+/* 자식 선택자 : ( > ) */
+
+.first > h2 {
+    color: white;
+    background: navy;
+}
+.second > h2{
+    color:navy;
+    background: wheat;
+}
+/* 인접 형제 선택자 : ( + ) */
+/* 주의할 것 : lion 요소를 갖는 요소 바로 뒤에 위치한 li 태그에만 적용*/
+#lion + li {
+    background: #1a23f2;
+
+}
+/* 일반 형제 선택자 : ( ~ ) */
+#lion ~li{
+    color : rgba(45, 175, 106, 0.967)
+}
+/* css색상에 관해서 */

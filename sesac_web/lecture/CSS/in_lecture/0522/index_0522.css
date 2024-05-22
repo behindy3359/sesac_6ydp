@@ -1,0 +1,47 @@
+/*  */
+/* 
+    * - 전체 선택자 !! 
+*/
+* {
+    color: coral;
+}
+/*
+    태그 선택자 
+*/
+
+h1{
+    background-color: peru;
+}
+p{
+    background-color: blueviolet;
+}
+/*
+    클래스 선택자
+*/
+.second_li {
+    background-color: aquamarine;
+}
+
+
+.small_animal{
+    font-size: 10px;
+}
+.big_animal{
+    color: forestgreen;
+    font-size: 50px;
+}
+.GGGG{
+    color: brown;
+}
+
+/* 
+    아이디 선택자
+*/
+#first_li1{
+    background-color: lightcyan;
+    text-align: center;
+}
+#first_li2{
+    background-color: lightcyan;
+    text-align: center;
+}
