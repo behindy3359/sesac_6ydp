@@ -1,0 +1,30 @@
+/* 요소 상황에 따른 가상 클래스 선택자 */
+.aquarium > *{
+    background-color: green;
+    color: wheat;
+}
+/*
+     #1. E:first-child : E( 요소 ) 가 첫번째 요소라면
+*/
+.aquarium > *:first-child{
+    background: lightgreen;
+    color: black;
+}
+/* 
+    #2. E:last-child : E( 요소 ) 가 마지막 요소라면
+*/
+.aquarium > *:last-child{
+    background: lightsalmon;
+}
+/* 
+    #3. E:nth-child( n ) : E( 요소 ) 가 n 번째 요소라면
+*/
+.aquarium > *:nth-child(2){
+    background: goldenrod;
+}
+/* 
+    #4. E:not( xyz ) : xyz가 아닌 요소 선택
+*/
+.aquarium > *:not(div){
+    background-color: brown;
+}
