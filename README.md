@@ -9,3 +9,7 @@
 0520 - html , css 
     use tag, css
     what is sematic
+
+0522 - css
+    use css selector
+    
