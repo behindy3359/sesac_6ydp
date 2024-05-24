@@ -1,0 +1,76 @@
+.div1{
+
+    color: bisque;
+    
+    /* background: linear-gradient(blue , pink); */
+    /* background: linear-gradient(to right, red , orange) */
+    background: linear-gradient(290deg, red , orange);
+    font-size: 40px;
+    /* 기본적인 font-size는 16px 이다 */
+    /* 
+        font-굵기
+        light , normal, bold, bolder
+        - 100~900
+    */
+    font-weight: 100;
+    /* 
+        폰트 모양
+        - normal, italic, oblique
+    */
+    font-style: oblique 20deg;
+    /* 
+        글자 정렬
+        center, left, right, justify( 양쪽정렬 )
+        각 요소 안에서 정렬
+    */
+    text-align: center;
+    /* 
+        글자선
+        -underline , line-through, overline, none
+    */
+    text-decoration: overline;
+
+    /* 
+        줄 높이 -px, 1.2 ( default )
+    */
+    line-height: 3;
+
+    /* 
+        요소 크기
+        min-width, max-width, max-height, min-height
+        
+    */
+
+    height: 500px;
+    width: 400px;
+
+    /* 
+        테두리
+    */
+
+    /* border-style :solid; 테두리 종류 */
+    /* border-width: 4px; 테두리 두께 */
+    /* border-color: black; 테두리 색깔 */
+    /* border :[ border-width ] [ border-style ] [ border-color ]; */
+
+    border-top: 4px dotted wheat;
+    border-bottom: 8px dotted wheat;
+    border-left: 4px solid black;
+    border-right: yellowgreen solid 10px;
+    
+    /* 
+        모서리 둥굴게 하기!
+        border-radius : 20px
+        border-radius:10px 20px 0 30%;
+        네 방향에 전부 다른 곡선을 줄 수 있다. 
+        */
+    border-radius:10px 20px 0 30%;
+
+}
+.div2{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background: linear-gradient(290deg, beige , yellowgreen);
+    border-radius: 50% 50% 50% 50%;
+}

@@ -1,0 +1,19 @@
+div{
+    width: 200px;
+    height: 200px;
+    border : 10px solid black;
+}
+#div1{
+    border-width: 1px 5px 10px 20px;
+}
+#div2{
+    border-style: solid dotted double groove;
+}
+#div3{
+    border-color: black red green blue;
+}
+#div4{
+    border-style: solid double dashed dotted;
+    border-width: 5px 10px 20px 20px;
+    border-color: red blue skyblue purple;
+}
