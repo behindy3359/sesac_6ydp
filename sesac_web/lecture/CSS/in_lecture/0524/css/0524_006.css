@@ -1,0 +1,52 @@
+body{
+
+}
+div{
+    width: 200px;
+    height: 200px;
+    border :1px solid black;
+    text-align: center  ;
+    font-weight: 500;
+}
+/* 
+    static - 기본값 , 작성하지 않더라도 적용되는 특성
+    - inline 요소면 왼쪽에서 오른쪽 방향으로  쌓일 것
+    - block 요소면 위에서 아래로 쌓일 것
+*/
+.static_div{
+    background-color: cornflowerblue;
+    position: static;
+}
+/* 
+    relative : 상대위치 - 일반적인 흐름에 따라 배치될 것
+    원래 있어야 하는 위치 기준으로 top/ bottom/ left/ right중 하나 이상 작성해야 함,
+    - 배치( 위치 )가 바뀌어도 원래 기존 자리가 유지 된다.
+    - 보통 부모 요소로 많이 활용함
+*/
+.relative_div{
+    background-color: brown;
+    position: relative;
+    left : 100px
+}
+/* 
+    absolute : 절대위치 - static 을 가지지 않은 가장 가까운 조상을 기준으로 하여 움직임
+    -> position 속성을 갖는 조상이 없다면 body 태그까지 찾아감
+    -> 특정 요소를 기준 삼아서 top, bottom, left, right씩 움직이겠다는 뜻
+
+*/
+.absolute_div{
+    background-color: goldenrod;
+    position: absolute;
+    right : 50px;
+    
+}
+/* 
+    fixed : 고정위치
+    -viewport( 브라우저의 화면 전체 )를 기준으로 특정 위치에 배치
+    -scroll 이 되어도 전혀 움직이지 않음
+    -header, footer에 많이 이용
+*/
+.fixed_div{
+    background-color: chocolate;
+    position: fixed;
+}

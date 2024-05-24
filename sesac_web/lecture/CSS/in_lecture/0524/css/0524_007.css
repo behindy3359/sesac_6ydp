@@ -1,0 +1,48 @@
+div{
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+}
+.div1{
+    background-color: burlywood;
+    top: 100px;
+    left: 100px;
+    z-index: 10;
+}
+
+.div2{
+    background-color: lightgreen;
+    top: 140px;
+    left: 140px;
+    z-index:3;
+}
+
+.div3{
+    background-color: lightcoral;
+    top: 180px;
+    left: 180px;
+    z-index: 6;
+}
+
+.div4{
+    background-color: lightskyblue;
+    top: 220px;
+    left: 220px;
+    z-index: 4;
+}
+
+.div5{
+    background-color: violet;
+    top: 260px;
+    left: 260px;
+    z-index: 7;
+}
+/* 
+    z-index 에 관해서 , 겹치는 요소에 대한 순서 결정
+    - 숫자값은 양수, 0, 음수..등 가능
+    - 숫자값이 클 수록 가장 위에 놓여짐
+
+*/

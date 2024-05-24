@@ -1,0 +1,11 @@
+div{
+    display: flex;
+    gap:20px;
+}
+.div1{
+    width: 200px;
+    height: 200px;
+}
+.innerdiv {
+    box-sizing: border-box;
+}
