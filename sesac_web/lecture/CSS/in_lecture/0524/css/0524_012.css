@@ -1,0 +1,17 @@
+.content1{
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+}
+.content1:hover {
+    transform: scale(3, 3);
+    font-size: 5px;
+    transition: 0.5s;
+    transition-delay: 1s;
+}

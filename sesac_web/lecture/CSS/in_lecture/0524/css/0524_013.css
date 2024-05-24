@@ -1,0 +1,41 @@
+.container{
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    background-color: burlywood;
+}
+.photo{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+.content1{
+    top:300px;
+    left:10px;
+    background: url(../../../../../image/photo1.avif);
+    transform: rotate3d( 2, 5, 0.5, 30deg);
+    background-size: cover;
+    z-index: 3;
+}
+.content2{
+    top:280px;
+    left:250px;
+    background: url(../../../../../image/photo2.avif);
+    transform: rotate3d( 2, 5, 0.5, 30deg);
+    background-size: cover;
+    z-index: 2;
+}
+.content3{
+    top:260px;
+    left:400px;
+    background: url(../../../../../image/photo3.avif);
+    transform: rotate3d( 2, 5, 0.5, 30deg);
+    background-size: cover;
+    z-index: 1;
+}
+.photo:hover{
+    transform: rotate3d(0, 0, 0, 0deg);
+    transition: 0.5s;
+    transition-delay: 200ms;
+    z-index: 5;
+}

@@ -1,0 +1,29 @@
+.d_inline1{
+    display: inline;
+    background-color: coral;
+}
+.d_inline2{
+    display: inline;
+    background-color: aqua;
+}
+.d_block1{
+    display: block;
+    background-color: coral;
+    width: 300px;
+}
+.d_block2{
+    display: block;
+    background-color: aqua;
+    
+}
+.d-i_block1{
+    display: inline-block;
+    background-color: blue;
+}
+.d-i_block2{
+    display: inline-block;
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    margin: 20px, 40px;
+}

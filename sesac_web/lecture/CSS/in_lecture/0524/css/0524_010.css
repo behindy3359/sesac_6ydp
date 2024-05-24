@@ -1,0 +1,72 @@
+.container{
+    position: relative;
+    width: 700px;
+    height: 700px;
+}
+.warm{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.head{
+    position: absolute;
+    top:380px;
+    left:100px;
+    background-color: blue;
+}
+.outter_eye{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+
+}
+.inner_eye{
+    position: absolute;
+    top: 30%;
+    left: 17%;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+
+}
+.body1{
+    position: absolute;
+    top: 430px;
+    left: 140px;
+    background-color: rgb(104, 104, 255);
+}
+.body2{
+    position: absolute;
+    top: 470px;
+    left: 180px;
+    background-color: rgb(165, 165, 255);
+}
+.body3{
+    position: absolute;
+    top: 510px;
+    left: 200px;
+    background-color: rgb(200, 200, 255);
+    z-index: 3;
+}
+.body4{
+    position: absolute;
+    top: 550px;
+    left: 250px;
+    background-color: rgb(99, 99, 130);
+    z-index: 10;
+}
+.grass{
+    width: 700px;
+    height: 100px;
+    position: absolute;
+    top:600px;
+    background-image: url(../../../../../image/grass.jpeg);
+    background-position: auto;
+    z-index: 5;
+}

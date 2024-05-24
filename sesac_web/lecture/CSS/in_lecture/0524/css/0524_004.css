@@ -3,7 +3,8 @@ div{
     width: 200px;
     height: 200px;
 }
-#innerdiv{
+
+#contentdiv{
     background-color: white;
     border-radius: 50%;
     border: 4px white;
@@ -15,4 +16,5 @@ div{
     padding: 5px;
     background:linear-gradient(45deg, red , yellow);
     border-radius: 50%;
+    position: absolute;
 }
