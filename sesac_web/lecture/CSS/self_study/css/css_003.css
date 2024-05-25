@@ -1,0 +1,14 @@
+.contentbox{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    overflow: scroll;
+    color: white;
+}
+.contentbox:hover{
+    width: 300px;
+    height: 300px;
+    transition: 500ms;
+    transition-delay: 0.5s;
+
+}

@@ -1,0 +1,29 @@
+.box{
+    position: relative;
+}
+.contentbox{
+    display: inline-block;
+    margin: 1px;
+    width: 50px;
+    height: 50px;
+
+    border: 1px black solid;
+    background-color: skyblue;
+    
+    transition: 1s;
+    transform-origin: left;
+}
+#contentbox1:hover{
+    transform: scaleY(3);
+}
+#contentbox2:hover{
+    transform: skewY(45deg);
+}
+#contentbox3:hover{
+    transform: translateY(100px);
+    border-radius: 50%;
+}
+#contentbox4:hover{
+    transform: rotate3d(0,1,0,720deg) scale(1.5);
+    background-color: yellow;
+}

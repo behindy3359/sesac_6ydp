@@ -1,0 +1,27 @@
+.box{
+    margin:2%;
+    border-radius: 50%;
+}
+.innerbox{
+    position: absolute;
+    width: 96%;
+    height: 96%;
+
+}
+#border_box1{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient( 30deg,red ,yellow);
+    z-index: 1;
+}
+#border_box2{
+    background-color: white;
+    z-index: 2;
+}
+#content_box{
+    background-image:url(../../../../image/chineseCoolNoolde.jpg);
+    background-size: 100%;
+    background-position: center;
+    z-index: 3;
+}
