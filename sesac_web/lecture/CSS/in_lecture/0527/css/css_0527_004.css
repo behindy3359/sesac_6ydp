@@ -1,0 +1,102 @@
+/* 
+    - animation name : @keyframes 애니메이션 이름 지정
+    - 시작 : from or 0%
+    - 중간 : 0~ 100%
+    - 끝  : to or 100%
+
+    animation-duration : 애니메이션이 한번 재생되는데 걸리는 총 재생 시간
+    animation-delay : 애니메이션이 시작되기 전에 기다리는 시간을 지정.
+    animation-interation-count : 애니메이션의 반복 횟수 ( default=1 , 1~infinite )
+    animation-timing-function : 애니메이션의 속도 변화를 지정
+        - linear, ease, ease-in, ease-out, ease-in-out등등
+    animation-direction : 애니메이션의 방향을 지정
+        - normal, reverse( 반대 방향 ), alternate-reverse
+        - alternate : from -> to방향으로 애니메이션 진행 -> 다음 반복에서 to > from방향을 바꿔가며 반복
+*/
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+}
+.item{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: salmon;
+    box-sizing: border-box;
+    border:1px black solid;
+}
+.box{
+    animation-name: boxAnimation;
+    /* 이름은 마음대로 ! 설정 , keyframes 에서 같은것을 사용해줘야 함 */
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+[class*="bounce-ball"]{
+    border-radius: 50%;
+}
+.bounce-ball1{
+    /* animation-name: ballAnimation1;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out; */
+    animation: ballAnimation1 1s ease-out infinite alternate;
+    left : 150px;
+}
+.bounce-ball2{
+    animation-name: ballAnimation2;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+@keyframes boxAnimation {
+    0%{
+        left: 0px;
+    }    
+    25%{
+        left: 30%;
+    }
+    50%{
+        left: 60%;
+    }
+    75%{
+        left: 30%
+    }
+    100%{
+        left: 0%;
+    }
+
+}
+@keyframes ballAnimation1 {
+    to{top: 50px;}
+    from{top: 300px;}
+}
+@keyframes ballAnimation2 {
+    from, to{
+        bottom: 0px ;
+        left : 0px;
+        animation-timing-function: ease-out;
+        /* 0px에서 정상 속도로 시작 > 속도 줄이면서 다음지점 도달 */
+    }
+    50%{
+        bottom: 150px;
+        left : 100px;
+        animation-timing-function: ease-in;
+        /* 시작점에서 천천히 시작 -> 다음지점에서 정상속도로 도달 */
+    }
+}
+/* 
+    Tips)
+    *from 에서 to 로의 애니메이션( 정방향 애니메이션 ) ( from ~ to )
+    - from 은 애니메이션의 시작상태를 표시
+    - to는 애니메이션의 종료상태를 표시
+    이러한 경우 애니메이션은 from 상태에서 시작하여 to 상태로 종료함.   
+    
+    * to에서 from으로의 애니메이션 ( 역방향 애니메이션 ) ( to ~ from )
+
+    - to는 애니메이션의 시작 상태를 나타냅니다.
+    - from은 애니메이션의 종료 상태를 나타냅니다.
+    - 이러한 경우 애니메이션은 to 상태에서 시작하여 from 상태로 종료합니다.
+*/

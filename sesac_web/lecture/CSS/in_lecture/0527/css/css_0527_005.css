@@ -1,0 +1,39 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.room{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.ball{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, yellow, brown);
+    
+    animation-name: bounce1;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce1{
+    0%{
+        transform: translate(0);
+    }
+    25%{
+        transform: translate(calc(100vw - 100px), 0px);
+    }
+    50%{
+        transform: translate(calc(100vw - 100px),calc(100vh - 100px));
+    }
+    75%{
+        transform: translate(0px, calc(100vh - 100px));
+    }
+    100%{
+        transform: translate(0);
+    }
+}

@@ -1,3 +1,4 @@
+
 /* padding-  ( top, bottom, right, left ) */
 /* margin ( top, bottom, right, left) */
 div{
@@ -56,5 +57,4 @@ div{
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
-
 }

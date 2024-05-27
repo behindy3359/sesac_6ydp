@@ -1,0 +1,96 @@
+.container1{
+    width: 300px;
+    height: 300px;
+    background-color: #333;
+    color: white;
+    border: 1px black solid;
+
+
+    margin: 0 auto;
+    /* margin 단축형 프로퍼티 2개 입력 -> 상하, 좌우 */
+    display: flex;
+    /* 부모 요소에 flex선언시 자식들이 가로 방향으로 배치됨 */
+    /*
+        flex박스 기본 용어 
+        * 주축 ( Main Axls )
+        - flex컨테이너 내에서 flex 아이템들이 배치되는 기본 방향을 나타내는 축.
+        * 교차축 ( Cross Axls )
+        - 주축에 수직인 축.
+    */
+    /* 
+        flex-direction : flex 방향을 설정( 주축을 설정 )
+        - row( default ) : 수평정렬
+        - row-reverse : 수평정렬 ( 우 > 좌 )
+        - column : 수직정렬 
+        - column-reverse : 수직정렬 ( 아래 > 위 )
+    */
+    flex-direction: row;
+    /* 
+        justify-content : 주축에 따라 아이템을 어떻게 배치할 것인가?
+        - flex-direction 이 수평정렬 ; 주축 - row( 가로 )
+        - flex-direction 이 수직정렬 ; 주축 - column( 세로 )
+        - flex-start( default ) 아이템을 주축에 대해서 start 지점을 기준으로 나열
+        - flex-end 아이템을 주축에 대해서 end 지점을 기준으로 나열
+        
+        justify-content : flex-start, flex-end, space-around, space-between, space-evenly;
+        space-around : 아이템들의 모든 여백을 공평하게 갖도록 함 ( 양 끝 영역의 단위가 1이라면, 나머지 영역을 2라고 함 )
+        space-between : 처음과 마지막 아이템을 양 끝에 붙이고 나머지 영역을 공평하게 나눔
+        space-evenly : start부터 첫 아이템의 간격, 아이템 끼리의 간격, 마지막 아이템부터 end 까지의 모든 간격이 일정
+    */
+    justify-content: space-evenly;
+    /* 
+        align-items : 교차 축에 대해서 아이템을 어떻게 배치할 것인가?
+        - flex-directiob : row - 교차축은 column ( 세로 )
+                           column - 교차축은 row ( 가로 )
+
+        - stretch( default ) : content 의 교차축을 채우기 위해 늘림
+        - flex-start : 교차축에 대하여 시작점으로 정렬.
+        - flex-end : 교차축에 대하여 끝점으로 정렬
+        - center : 교차축에 대하여 가운데 정렬
+        - baseline : 아이템을 텍스트의 베이스 라인을 기준으로 정렬
+    */
+    align-items: stretch;
+    /* 
+        flex-wrap: 줄바꿈( 개행 ) 처리
+        -> 컨테이너 ( 부모 )가 한 줄에 아이템을 다 수용하지 못할 때, 줄바꿈 관련 설정
+        - nowrap : 줄바꿈 안함
+        - wrap : 줄바꿈 함
+        - wrap-reverse : 줄바꿈 하는데 아이템을 역순 배치
+    */
+    flex-wrap: wrap;
+    /* 
+        align-content : 여러 행에 대한 정렬. 
+        ( 조건 ) : flex-wrap : wrap/wrap-reverse
+    */
+    align-content: space-evenly;
+
+}
+.item{
+    width: 70px;
+    height: 70px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 100px;
+    background-color: aqua;
+    border: 1px black solid;
+}
+.items1{
+    background-color: violet;
+    font-size: 10px;
+}
+.items2{
+    background-color: limegreen;
+    font-size: 15px;
+}
+.items3{
+    background-color: darkorange;
+    font-size: 20px;
+}
+.items4{
+    background-color: lightblue;
+    font-size: 25px;
+}
+.items5{
+    background-color: coral;
+    font-size: 30px;
+}

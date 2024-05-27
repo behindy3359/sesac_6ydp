@@ -14,12 +14,10 @@
         background-color: orange;
         left: 50px;
     }
-    
     50%{
         background-color: yellow;
         left: 100px;
     }
-    
     75%{
         background-color: orange;
         left: 50px;
