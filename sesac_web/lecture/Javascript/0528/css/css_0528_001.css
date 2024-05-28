@@ -1,0 +1,27 @@
+.container{
+    width: 700px;
+    height: 700px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+
+}
+.item {
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    margin: 5px;
+}
+.box1{
+    border: 4px red solid;
+    color: red;
+}
+.box2{
+    border: 4px blue solid;
+    color: blue;
+}
+.box3{
+    border: 4px green solid;
+    color: green
+}
