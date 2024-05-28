@@ -1,0 +1,21 @@
+[class*="header"]{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: gray;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+}
+span, li{
+    margin:0px 10px;
+}
+ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px;
+}
+.header2 > .menus{
+    width: 100%;
+}
