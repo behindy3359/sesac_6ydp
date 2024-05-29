@@ -1,7 +1,7 @@
-[class*="header"]{
+header{
     display: flex;
     flex-wrap: wrap;
-    background-color: gray;
+    background-color: rgb(181, 181, 181);
     font-weight: bold;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +12,6 @@ span, li{
 ul{
     display: flex;
     list-style: none;
-    flex-direction: row;
     justify-content: space-between;
     padding: 0px;
 }
