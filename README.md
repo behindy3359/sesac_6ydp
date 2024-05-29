@@ -14,4 +14,10 @@
     use css selector
 
 0524 - css
-    use css transform    
+    use css transform 
+
+0527 - css , js start
+    display - flex
+    animation
+
+0529 - javascript
