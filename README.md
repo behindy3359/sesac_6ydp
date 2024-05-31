@@ -21,3 +21,6 @@
     animation
 
 0529 - javascript
+    function, variable
+0530 - javascript 
+    repeat, conditional statement
