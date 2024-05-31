@@ -35,6 +35,8 @@ for( let i = 1 ; i < 10 ; i++ ){
 // 	console.log(i);
 // }// 1, 2, 4, 5
 
+
+
 // for ( let i = 1 ; i <= 10000 ; i ++ ){
 //     if( i % 13 === 0 ){
 //         if( i % 2 === 0 ){
@@ -43,7 +45,6 @@ for( let i = 1 ; i < 10 ; i++ ){
 //     }
 // }
 // let mamamamam = prompt( '숫자를 입력하렴!' );
-
 // for ( let i = 1 ; i <= mamamamam ; i ++ ){
 //     if( i % 13 === 0 ){
 //         if( i % 2 === 0 ){
