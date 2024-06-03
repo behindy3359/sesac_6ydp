@@ -1,0 +1,33 @@
+.dot-glass-left{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 120px;
+}
+.glass-dot{
+    box-sizing: border-box;
+    width: 10%;
+    height: 25%;
+    background-color: rgb(71, 71, 71);
+    border: 1px solid black;
+}
+#dot2,#dot4,#dot13,#dot15,#dot24,#dot26{
+    background-color:white;
+}
+#dot11,#dot21,#dot22,#dot31,#dot32,#dot33,#dot40,#dot39,#dot30{
+    background-color: white;
+}
+.dot-glass-right{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 300px;
+    height: 120px;
+}
+.glass-box{
+    
+    display: flex;
+}
+.glass-center{
+    
+}
