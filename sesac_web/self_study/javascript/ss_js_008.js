@@ -8,19 +8,52 @@ const iAmButton3 = document.querySelector('#iAmButton3');
 
 
 function sayHello() {
+    let time = 0;
+    const start_time = performance.now();
+
+
     let a = document.createElement('div');
+    let b = document.createElement('div');
+    let c = document.createElement('div');
+    let d = document.createElement('div');
+    let e = document.createElement('div');
+    let f = document.createElement('div');
+    let g = document.createElement('div');
+    let h = document.createElement('div');
+    let i = document.createElement('div');
+
     a.textContent='Hello';
     console.log(a);
     iAmAnswerbox.appendChild(a);
+
+
+
+    const end_time = performance.now();
+    console.log(`Result Time :  ${end_time - start_time} ms`);
 }
 
 // 
 
 iAmButton1.addEventListener('click', function(){
+    let time = 0;
+    const start_time = performance.now();
+
     let a = document.createElement('div');
+    let b = document.createElement('div');
+    let c = document.createElement('div');
+    let d = document.createElement('div');
+    let e = document.createElement('div');
+    let f = document.createElement('div');
+    let g = document.createElement('div');
+    let h = document.createElement('div');
+    let i = document.createElement('div');
     a.textContent='Hello';
     console.log(a);
     iAmAnswerbox.appendChild(a);
+
+
+    const end_time = performance.now();
+    console.log(`Result Time :  ${end_time - start_time} ms`);
 });
 iAmButton2.addEventListener('click', (event) => sayHello());
 iAmButton3.addEventListener('click', sayHello);
