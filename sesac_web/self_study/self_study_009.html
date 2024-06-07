@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한글 애니메이션</title>
+  <style>
+    #container {
+      font-size: 72px;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .part {
+      opacity: 0;
+      animation: drawPart 1s forwards;
+      animation-delay: 0.5s;
+      transform: translateX(-100%);
+    }
+    
+    @keyframes drawPart {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <span class="letter">
+      <span class="part">'</span>
+      <span class="part">ㅡ</span>
+      <span class="part">ㅇ</span>
+    </span>
+  </div>
+
+  <script>
+    const parts = document.querySelectorAll('.part');
+
+    parts.forEach((part, index) => {
+      setTimeout(() => {
+        part.style.opacity = 1;
+      }, 1000 * index); // 1000 milliseconds delay between each part
+    });
+  </script>
+</body>
+</html>
+
