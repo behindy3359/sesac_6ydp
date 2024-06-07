@@ -1,0 +1,27 @@
+@media screen and ( max-width : 300px){
+    body{
+        background-color: orange;
+    }
+}
+@media screen and ( min-width: 300px)and(max-width : 500px){
+    body{
+        background: none;
+    }
+}
+@media screen and (min-width : 500px){
+    body{
+        background-color: skyblue;
+    }
+}
+@media screen and ( height < 300px ) {
+    p{
+        font-size: 50px;
+        font-weight: 700;
+        color: red;
+    }
+}
+@media screen and ( height > 500px ) {
+    p{
+        background-color: green;
+    }
+}
