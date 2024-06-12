@@ -26,7 +26,7 @@ http.createServer((req, res)=>{
             return res.end('404 file not found : 페이지가 존재하지 않습니다!')
         }else{
             res.writeHead(200,{'content-type':'text/html'});
-            res.write( data )
+            res.write()
             console.log('data :' + data);
         }
         return res.end();
