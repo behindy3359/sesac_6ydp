@@ -6,5 +6,6 @@
 ## 폴더 무시 : test/
 
 .DS_Store
-/node_modules
+node_modules/
 pacjage-lock.json
+*.log
