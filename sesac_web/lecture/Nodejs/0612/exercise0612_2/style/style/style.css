@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: orange;
+}
+h1,h2,h3,p{
+    color: red;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: navajowhite;
+}
+.content{
+    margin: 20px auto;
+    width: 80%;
+    background-color: burlywood;
+}

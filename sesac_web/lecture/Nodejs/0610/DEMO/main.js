@@ -19,8 +19,6 @@ const urlVal = require('url');
 // console.log(partsData);
 // console.log(partsData.sm);//기존 쿼리에서 month에 해당하는 것만 출력 feb
 
-
-
 httpVal.createServer( function ( req, res ) {
     let q = urlVal.parse( req.url, true )
     let filename = '.'+q.pathname;
