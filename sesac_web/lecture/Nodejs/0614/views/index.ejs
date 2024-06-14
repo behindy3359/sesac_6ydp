@@ -3,8 +3,24 @@
     <%- include('./partials/head.ejs') %>
 <body>
     <h1>index page</h1>
-        <form action=""></form>
     <hr>
+    <h2>get 방식으로 요청</h2>
+    <div class="container">
+        <form action="/gF" method="get">
+            <label for="id">아이디 :</label><input type="text" name="id" placeholder="아이디">
+            <label for="password">비밀번호 :</label><input type="password" name="password" placeholder="비밀번호">
+            <button type="submit"> Get 방식으로 제출 </button>
+        </form>
+    </div>
+    <h2>post 방식으로 요청</h2>
+    <div class="container">
+        <form action="/pF" method="post">            
+            <label for="id">아이디 :</label><input type="text" name="id" placeholder="아이디">
+            <label for="password">비밀번호 :</label><input type="password" name="password" placeholder="비밀번호">
+            <button type="submit"> Post 방식으로 제출 </button>
+        </form>
+    </form>
+    </div>
 </body>
     <%- include('./partials/tail.ejs')%>
 </html>

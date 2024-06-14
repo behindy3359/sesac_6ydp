@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <h1>result page</h1>
+    <h2><%= reqMethod %> 방식으로 요청받은 결과</h2>
+    <hr>
+    <div class="container">
+      <div><span><%= userInfo.id %></span> 님 환영합니다!</div>
+      <div>비밀번호는 <span><%= userInfo.password%></span> 입니다.</div>
+    </div>
+    <a href="/">홈으로 돌아가기</a>
+</body>
+    <%- include('./partials/tail.ejs')%>
+</html>
