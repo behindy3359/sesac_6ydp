@@ -22,3 +22,20 @@ let currentColor = userColor || defaultColor; // 유저가 값을 입력하면 �
 console.log(currentColor);
 
 
+// true || true; // t || t returns true
+// false || true; // f || t returns true
+// true || false; // t || f returns true
+// a1 = true && true; // t && t returns true
+// a2 = true && false; // t && f returns false
+// a3 = false && true; // f && t returns false 
+
+
+
+// false || 3 === 4; // f || f returns false
+// "Cat" || "Dog"; // t || t returns "Cat"
+// false || "Cat"; // f || t returns "Cat"
+// "Cat" || false; // t || f returns "Cat"
+// "" || false; // f || f returns false
+// false || ""; // f || f returns ""
+// false || varObject; // f || object returns varObject
+

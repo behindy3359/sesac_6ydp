@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- contents -->
+<div class="form-group">
+  <div class="form-tit">
+      Label
+  </div>
+  <div class="form-conts">
+      <!-- spinner -->
+      <div class="form-spinner">
+          <input type="text" id="consult_name" class="form-control" placeholder="placeholder">
+          <div class="spinner"></div>
+      </div>
+      <!-- //spinner -->
+  </div>
+</div>
+<br>
+<br>
+<!-- spinner -->
+<div class="spinner">
+  Loading data..
+</div>
+<!-- //spinner -->
+    <div><span><%= userInfo.userName %></span> 님 환영합니다!</div>
+    <div>성별 <span><%= userInfo.gender%></span> 입니다.</div>
+    <div>생년월일 <span><%= userInfo.birth[0]%>년<%= userInfo.birth[1]%>월<%= userInfo.birth[2]%>일</span>입니다.</div>
+    <div>취미는 <span><%= userInfo.hobby%></span> 입니다.</div>
+    <!-- <div class="like_color" style='color: <%= userInfo.likecolor %>;'>좋아하는 색 입니다.</div> -->
+    <div>좋아하는 숫자는<span><%= userInfo.likenumber%></span>입니다.</div>
+  </div>
+  <a href="/">홈으로 돌아가기</a>
+</body>
+</html>
