@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- jquery CDN ( Ajax를 간편하게 사용하고자 불러옴 )-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <title><%= title %></title>
+</head>
+<body>
+  <h1>Here is Dynamic</h1>
+  <hr>
+  <form name="register">
+    <label for="userName">이름</label><input type="text" name="userName" id="userName" required><br>
+    <fieldset>
+      <legend>성별</legend>
+      <input type="radio" name="gender" id="male" value="male"><label for="male">남성</label>
+      <input type="radio" name="gender" id="female" value="female"><label for="female">여성</label>
+    </fieldset>
+    <button class="DynamicPage-ajax-button" onclick="ajaxGet();" type="button"> ajax 로 get 방식 요청 </button>
+    <button class="DynamicPage-ajax-button" onclick="ajaxPost();" type="button"> ajax 로 post 방식 요청 </button>
+  </form>
+  <div class="result">
+    
+  </div>
+</body>
+<script>
+  const resultBox = document.querySelector('.result');
+  
+  function ajaxGet(){// get 방식이므로 브라우저에서 url 쿼리까지 직접 입력해서도 값을 확인 가능
+    console.log('버튼 클릭!');
+    // 폼 선택하기, 폼 요소의 값 추출하기, ajax 비동기 통신(서버의 app.js 파일로 유저가 브러우저에 입력한 값을 보내기)
+    // 1 - 폼 선택하기
+    const form = document.forms['register'];
+  
+    const data = {
+      //2 - 요소 추출하기 , 폼을 선택하고, 필요한 Name 의 value를 얻어옴 
+      name : form.userName.value,
+      gender :form.gender.value
+    }
+
+    // 3 - ajax비동기 통신 요청 보내기!
+    $.ajax({
+      type : 'get', 
+      url : '/ajax', // 이 요청을 받을 "서버 측 경로"
+      data, // data : data
+      success:function(data){
+        console.log(data);
+        resultBox.textContent=`get /ajax 요청에 대한 응답 완료! ${data.name} 님은 ${data.gender} 입니다.`;
+        resultBox.style.color ='blue';
+      }
+    })
+  }
+  function ajaxPost(){
+    console.log('버튼 클릭!');
+    // 폼 선택하기, 폼 요소의 값 추출하기, ajax 비동기 통신(서버의 app.js 파일로 유저가 브러우저에 입력한 값을 보내기)
+    // 1 - 폼 선택하기
+    const form = document.forms['register'];
+    const data = {
+      //2 - 요소 추출하기 , 폼을 선택하고, 필요한 Name 의 value를 얻어옴 
+      name : form.userName.value,
+      gender : form.gender.value
+    }
+    // 3 - ajax비동기 통신 요청 보내기!
+    $.ajax({
+      type : 'post',
+      url : '/ajax', // 이 요청을 받을 "서버 측 경로"
+      data, // data : data
+      success:function(data){
+        console.log(data);
+        resultBox.textContent=`post /ajax 요청에 대한 응답 완료! ${data.name} 님은 ${data.gender} 입니다.`;
+        resultBox.style.color ='red';
+      }
+    })
+  }
+
+</script>
+</html>
