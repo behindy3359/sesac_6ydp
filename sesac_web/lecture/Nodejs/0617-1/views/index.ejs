@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <hr>
+  
+  <h2>single file upload</h2>
+  <!-- multer이용시에는 enctype을 multipart/form-data 여야 함 -->
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name = 'userfile'><br>
+    <input type="text" name = "title">
+    <button type="submit">업로드 버튼님</button>
+  </form>
+</body>
+</html>
