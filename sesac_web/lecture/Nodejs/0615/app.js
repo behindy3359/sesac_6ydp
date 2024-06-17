@@ -39,9 +39,6 @@ app.get('/gF',(req,res)=>{
     });
 })
 
-
-
-
 /** listen(포트번호, 실행됐을때 확인용 출력문); 서버 시작 메서드 */
 app.listen(portNo,()=>{
     console.log(portNo + '에서 서버 실행중 '+ Date());
