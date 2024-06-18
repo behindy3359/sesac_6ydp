@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://kit.fontawesome.com/14db1d786f.js" crossorigin="anonymous"></script>
+ 
+  <title>Document</title>
+
+</head>
+<style>
+  .weather-wrapper{
+    display: flex;
+  }
+</style>
+<body>
+  <div class="weather-wrapper">
+    <div class="weather-name"></div>
+    <div class="weather-icon"></div>
+  </div>
+</body>
+<script>
+  let weatherNameBox = document.querySelector('.weather-name');
+  let weatherIconBox = document.querySelector('.weather-icon');
+  let weatheBox = document.querySelector('.weather-wrapper');
+  /** openweather api 를 활용해서 동작구 상도역 부근의 날씨를 가져옴, 오늘의 날씨 */
+  async function getWeatherData() {
+    const lat = 37.50316;
+    const lon = 126.9477;
+    const appkey = '8b57cc4c';
+    try {
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appkey}`);
+      return response.data;  // 여기에서 직접 데이터를 반환하도록 수정
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+      throw error;  // 에러를 다시 던지면 exec 함수에서 캐치할 수 있습니다.
+    }
+  }
+
+  async function exec(){
+  let weatherName , weatherIcon, color;
+  try{
+    const data = await getWeatherData();
+    const Weather = data.weather[0].main;
+    console.log(Weather);
+    switch(Weather){
+      case 'Thunderstorm':
+        weatherName='Thunderstorm';
+        weatherIcon='<i class="fa-solid fa-bolt"></i>';
+        Tcolor = 'grey';
+        break;
+      case 'Drizzle': 
+        weatherName='Drizzle';
+        weatherIcon= '<i class="fa-solid fa-cloud-rain"></i>';
+        Tcolor = 'grey';
+        break;
+      case 'Rain': 
+        weatherName='Rain';
+        weatherIcon= '<i class="fa-solid fa-cloud-showers-heavy"></i>';
+        Tcolor = 'blue';
+        break;
+      case 'Snow': 
+        weatherName='Snow';
+        weatherIcon= '<i class="fa-solid fa-snowflake"></i>';
+        Tcolor = 'skyblue';
+        break;
+      case 'Atmosphere':
+        weatherName='Atmosphere';
+        weatherIcon= '<i class="fa-solid fa-wind"></i>';
+        Tcolor = 'grey';
+        break;
+      case 'Clear': 
+        weatherName='Clear';
+        weatherIcon= '<i class="fa-solid fa-sun"></i>';
+        Tcolor = 'orange';
+        break;
+      case 'Clouds': 
+        weatherName='Clouds';
+        weatherIcon= '<i class="fa-solid fa-cloud"></i>';
+        Tcolor = 'grey';
+        break;
+      default:
+        weatherName='?, 알 수 없는 날씨 입니다.';
+        weatherIcon= '<i class="fa-solid fa-question"></i>';
+        Tcolor = 'red';
+        break;
+      }
+    }catch(e){
+      console.error('Error :', e);
+      weatherNameBox.textContent=`알 수 없는 에러가 발생했습니다. 정신차리세요`;
+      weatherIconBox.innerHTML=`<i class="fa-solid fa-x"></i>`;
+      weatherBox.style.color='red';
+    }
+  
+  weatherNameBox.textContent = weatherName;
+  weatherIconBox.innerHTML = weatherIcon;
+  weatheBox.style.color=Tcolor;
+  }
+  exec();
+</script>
+</html>
