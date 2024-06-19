@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <hr>
+  
+  <h2>single file upload</h2>
+  <fieldset>
+    <legend>single file uploda</legend>
+    <form action="/upload/single" method="post" enctype="multipart/form-data">
+      <input type="file" name = 'userfile1'><br>
+      <input type="text" name = "title" required>
+      <button type="submit">업로드 버튼님</button>
+    </form>
+  </fieldset>
+  <!-- multer이용시에는 enctype을 multipart/form-data 여야 함 -->
+  <hr>
+  <h2>Multi file upload</h2>
+  <!-- multer이용시에는 enctype을 multipart/form-data 여야 함 -->
+  <fieldset>
+    <legend> Multi file upload </legend>
+    <form action="/upload/multi" method="post" enctype="multipart/form-data">
+      <input type="file" name = 'userfile2' multiple><br>
+      <input type="text" name = "title" required>
+      <button type="submit">multi 업로드 버튼님</button>
+    </form>
+  </fieldset>
+  <hr>
+
+  <h2>Multi file upload 22</h2>
+  <!-- multer이용시에는 enctype을 multipart/form-data 여야 함 -->
+  <fieldset>
+    <legend> Multi file upload </legend>
+    <form action="/upload/fields" method="post" enctype="multipart/form-data">
+ <input type="fil     e" name = 'userfile3' multiple>
+      <input type="text" name = "title" required><br>
+      <input type="file" name = 'userfile4' multiple>
+      <input type="text" name = "title" required><br>
+      <button type="submit">multi 업로드 버튼님</button>
+    </form>
+  </fieldset>
+</body>
+</html>

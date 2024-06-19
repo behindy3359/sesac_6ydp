@@ -11,16 +11,12 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use('uploads', express.static(__dirname + '/uploads'));
 
-
 const upload = multer({
   dest : 'uploads/',
 });
 
-
-
-
 app.get('/',(rq,rs)=>{
-  rs.render('index',{title : '파일 업로드 하기!',});
+  rs.render('index', {title : '파일 업로드 하기!',});
 })
 
 app.listen(portNo , ()=>{
