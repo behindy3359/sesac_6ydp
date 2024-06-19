@@ -12,10 +12,8 @@ app.set('views', 'views');
 // 요청이 들어올 때 마다, 모든 요청에 대해서 미들웨어가 실행.
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use(express.static('public'));
-
+app.use('/static', express.static('public'));
 app.use('/image', express.static(__dirname + '/uploads'));
-
 /** multer 세부 설정
  *  경로 뿐 아니라 파일명, 크기 등을 직접, 제어, 지정하고 싶다?
  *  
@@ -35,8 +33,9 @@ const uploadDetail = multer({
   /**업로드 크기 제한 */
   limits:{ fileSize: 5 * 1024 * 1024 }
 })
-
-
+app.post('/dynamicFile',uploadDetail.single('thumbnail'), (rq,rs)=>{
+  rs.send(rq.file);
+})
 //single()의 매개변수로, <input>태그의 name을 넣는다.
 app.post('/upload/single', uploadDetail.single('userfile1'), (rq,rs)=>{
   console.log(rq.body); // {title : 작성한 제목!}
@@ -56,15 +55,12 @@ app.post('/upload/multi',uploadDetail.array('userfile2'),(rq,rs)=>{
   // 지정된 디렉토리에 업로드된 파일이 생성, 확장자 없이 파일명이 자동으로 저장됨, 별도로 확장자를 지정해주면 업로드 때의 이미지를 확인할 수 있음
   rs.send("upload 완료");
 })
-
 // 여러 파일을 각각의 인풋에 업로드 할 때! 필요
 app.post('/upload/fields', uploadDetail.fields([{name: 'userfile3'},{name: 'userfile4'}]), (rq,rs)=>{
   console.log(rq.body);
   console.log(rq.files);
   rs.send("upload 완료")
 })
-
-
 
 app.get('/',(rq,rs)=>{
   rs.render('index', {title : '파일 업로드 하기!',});

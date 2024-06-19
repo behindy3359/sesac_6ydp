@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
   <h1><%= title %></h1>
@@ -37,12 +39,28 @@
   <fieldset>
     <legend> Multi file upload </legend>
     <form action="/upload/fields" method="post" enctype="multipart/form-data">
- <input type="fil     e" name = 'userfile3' multiple>
+      <input type="file" name = 'userfile3' multiple>
       <input type="text" name = "title" required><br>
       <input type="file" name = 'userfile4' multiple>
       <input type="text" name = "title" required><br>
       <button type="submit">multi 업로드 버튼님</button>
     </form>
   </fieldset>
-</body>
+
+  <h2>dynamic file upload</h2>
+  <!-- multer이용시에는 enctype을 multipart/form-data 여야 함 -->
+  <fieldset>
+    <legend> Multi file upload </legend>
+    <form action="/upload/dynamic" method="post" enctype="multipart/form-data">
+      <input type="file" id = 'userfile5' multiple>
+      <input type="text" name = "title" required><br>
+      <button type="button" onclick="uploadThumbnail()">동적 파일 업로드 버튼님</button>
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend>업로드 결과!</legend>
+    <img src="" alt="" id="uploadedImage">
+  </fieldset>
+</body>  
+  <script src="/static/js/thumbnail.js"></script>
 </html>
