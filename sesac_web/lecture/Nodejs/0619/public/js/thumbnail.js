@@ -6,8 +6,6 @@ function uploadThumbnail(){
   const formData = new FormData();
   /**  */
   const fileInput = document.querySelector('#userfile5');
-  console.dir(fileInput);
-  console.dir(fileInput.files);
 
   formData.append('thumbnail', fileInput.files[0]);
 

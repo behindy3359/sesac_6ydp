@@ -13,7 +13,7 @@ app.set('views', 'views');
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use('/static', express.static('public'));
-app.use('/image', express.static(__dirname + '/uploads'));
+app.use('/image', express.static(__dirname + '/public/uploads'));
 /** multer 세부 설정
  *  경로 뿐 아니라 파일명, 크기 등을 직접, 제어, 지정하고 싶다?
  *  
@@ -34,7 +34,8 @@ const uploadDetail = multer({
   limits:{ fileSize: 5 * 1024 * 1024 }
 })
 app.post('/dynamicFile',uploadDetail.single('thumbnail'), (rq,rs)=>{
-  rs.send(rq.file);
+
+  rs.send(data);
 })
 //single()의 매개변수로, <input>태그의 name을 넣는다.
 app.post('/upload/single', uploadDetail.single('userfile1'), (rq,rs)=>{

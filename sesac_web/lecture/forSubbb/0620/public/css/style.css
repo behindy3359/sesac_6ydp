@@ -1,0 +1,12 @@
+.resultBox{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: cornflowerblue;
+}
+.userImage{
+  width: 400px;
+  border-radius: 50%;
+  background-color: #fff;
+}
