@@ -28,6 +28,7 @@ const uploadSetup = multer({
   })
 })
 app.post('/signIn',uploadSetup.single('userImage'),(req,res)=>{
+  /** file, user 정보를 data에 담아 돌려주기 */
   const data ={
     file : req.file,
     user : req.body,
