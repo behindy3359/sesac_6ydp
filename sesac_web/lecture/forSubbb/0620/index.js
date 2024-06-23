@@ -42,7 +42,6 @@ app.get('/',(rq,rs)=>{
   })
 })
 
-
 app.listen(portNo,()=>{
   console.log(`server Open : ${portNo},  ${Date()}`);
 })

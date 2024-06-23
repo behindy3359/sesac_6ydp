@@ -12,14 +12,12 @@ function signInFunc(){
   const ext = fileInput.files[0].name.slice(fileInput.files[0].name.lastIndexOf('.'));
   let newFileName = userForm.userId.value + ext;
 
-
   // 전송할 데이터 욱여넣기
   signInData.append('userImage', fileInput.files[0], newFileName);
   signInData.append('id', userForm.userId.value);
   signInData.append('name', userForm.userName.value);
   signInData.append('password', userForm.userPw.value);
   signInData.append('age', userForm.userAge.value);
-
 
   //주고받는건 여기에서!
   axios({
