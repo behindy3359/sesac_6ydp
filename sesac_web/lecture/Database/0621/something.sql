@@ -304,5 +304,4 @@ select custname, sum( price * amount )as 'total_price'
     
 select * from customer natural join orders; 
 
-
-
+show databases;
