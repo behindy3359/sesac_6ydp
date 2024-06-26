@@ -9,3 +9,4 @@
 **/node_modules/
 **/pacjage-lock.json
 **/*.log
+**/index.sql
