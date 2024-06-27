@@ -7,6 +7,12 @@
 
 **/.DS_Store
 **/node_modules/
+**/model/
 **/pacjage-lock.json
 **/*.log
+<<<<<<< Updated upstream
 **/index.sql
+=======
+**/*.sql
+**/index.sql
+>>>>>>> Stashed changes
