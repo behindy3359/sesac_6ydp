@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/head.ejs') %>
+  <link rel="stylesheet" href="/st/signupstyle.css">
+<body>
+  <article>
+    <form name="signup-form">
+      <div class="input-container">
+        <i class="fas fa-user"></i>
+        <input type="text" id="userId" placeholder="아이디">
+        <button type="button" id='exist-button' onclick="checkDuplicateUserId()">중복확인</button>
+      </div>
+      <div class="input-container">
+        <i class="fa-solid fa-signature"></i>
+        <input type="text" id="userName" placeholder="이름">
+      </div>
+      <div class="input-container">
+        <i class="fas fa-key"></i>
+        <input type="password" id="userPw" placeholder="비밀번호">
+      </div>
+      <div class="buttongroup">
+        <button type="button" onclick="signUpFunc()">회원가입</button>
+      </div>
+      <hr>
+      <div><a href="/">로그인</a></div>
+    </form>
+  </article>
+</body>
+  <%- include('partials/tail.ejs') %>
+</html>

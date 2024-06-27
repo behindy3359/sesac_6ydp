@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<%- include('partials/head.ejs') %>
+<body>
+  <h1>사용자 정보</h1>
+  <hr>
+  <a href="/">로그 아웃</a>
+  
+  <form id="userinfo-form">
+    ID : <input type="text" name="userId" value="<%= user.userid %>" readonly><br>
+    name : <input type="text" name="userName" value="<%= user.username %>"><br>
+    password : <input type="password" name="userPassword" value="<%= user.userpassword %>"><br>
+    join date :<%= user.singuptime %>"<br>
+    <button type="button" onclick="editinfo()">정보 수정</button>
+    <button type="button" onclick="deleteinfo()">회원 탈퇴</button>
+  </form>
+</body>
+<%- include('partials/tail.ejs') %>
+</html>

@@ -1,0 +1,88 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+article {
+  width: 500px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+.input-container i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+.input-container input[type="text"],
+.input-container input[type="password"] {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  box-sizing: border-box;
+}
+#userId {
+  width: calc(100% - 90px);
+}
+#exist-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 10px;
+}
+.buttongroup {
+  text-align: center;
+  margin-top: 20px;
+}
+button {
+  padding: 10px 20px;
+}
+hr {
+  margin: 20px 0;
+}
+div {
+  text-align: center;
+}  .input-container {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.input-container i {
+  position: absolute;
+  left: 10px;
+  color: #888;
+  z-index: 1;
+}
+
+.input-container input[type="text"],
+.input-container input[type="password"] {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  box-sizing: border-box;
+}
+
+#userId {
+  width: calc(100% - 100px); /* 중복확인 버튼 너비에 따라 조정 */
+  padding-right: 110px; /* 버튼이 텍스트 위에 오버랩되지 않도록 */
+}
+
+#exist-button {
+  position: absolute;
+  right: 0;
+  padding: 8px 10px;
+  width: 100px; /* 버튼 너비 지정 */
+  height: 100%; /* 입력 필드와 같은 높이로 설정 */
+  box-sizing: border-box;
+}

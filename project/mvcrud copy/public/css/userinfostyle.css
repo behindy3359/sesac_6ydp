@@ -1,0 +1,44 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 20px;
+}
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+.input-container i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+.input-container input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  box-sizing: border-box;
+}
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+.join-date {
+  margin-bottom: 15px;
+}

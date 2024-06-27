@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+article {
+  width: 500px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.buttongroup {
+  text-align: center;
+  margin-top: 20px;
+}
+button {
+  padding: 10px 20px;
+}
+hr {
+  margin: 20px 0;
+}
+div {
+  text-align: center;
+}
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-container i {
+  font-size: 1.4rem; /* 아이콘 크기를 약간 줄임 */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  height: 100%; /* 아이콘의 높이를 컨테이너 높이와 동일하게 설정 */
+  display: flex;
+  align-items: center; /* 아이콘을 수직 중앙에 배치 */
+}
+
+.input-container input {
+  padding: 10px 10px 10px 35px; /* 왼쪽 패딩만 조정 */
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px; /* 입력 필드의 높이를 명시적으로 설정 */
+} 
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-container i {
+  font-size: 1.2rem; /* 아이콘 크기를 약간 줄임 */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  height: 100%; /* 아이콘의 높이를 컨테이너 높이와 동일하게 설정 */
+  display: flex;
+  align-items: center; /* 아이콘을 수직 중앙에 배치 */
+}
+
+.input-container input {
+  padding: 10px 10px 10px 35px; /* 왼쪽 패딩만 조정 */
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px; /* 입력 필드의 높이를 명시적으로 설정 */
+}
