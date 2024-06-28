@@ -2,6 +2,13 @@ const mysql =require('mysql2');
 /**
  * DB 연결객체 
  */
+// const conn = mysql.createConnection({
+//   host : 'localhost',
+//   user : 'user',
+//   password : '12345678',
+//   database : 'codingon'
+// });
+
 const conn = mysql.createConnection({
   host : 'localhost',
   user : 'user',
