@@ -19,6 +19,7 @@ exports.memberSignUp = (req, res) => {
   });
 };
 
+//
 exports.memberExCheck = (req, res) => {
   mainModel.memberExCheck(req.body, (result) => {
     res.send(result);

@@ -1,71 +1,62 @@
-// 설치한 sequelize 받아옴!
-const Sequelize = require('sequelize');
-const playerModel = require('./player');
-const profileModel = require('./profile');
-const teamModel = require('./team');
+const Sequelize = require('sequelize'); // sequelize 패키지를 불러옴
+const config = require(__dirname + '/../config/config.json')["development"]; // db 연결 정보
+const db = {}; // 빈 객체 
 
-// config/config.json 의 development 객체를 잡아옴!
-const config = require(__dirname + '/../config/config.json')["development"];
-const db = {};
-
-//객체를 하나 만들거야! 하나씩 설정을 넣어가면서... config의 데이터를 넣어가면서 .. config 에는 객체 자체를 넣어버림 => 어떤 DB에 연결할지를 정해둠
 const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
+  config.database, 
+  config.username, 
+  config.password, 
   config
-); //객체 완성 끝!
+); // sequelize 객체
 
-const PlayerModel = require('./player')(sequelize,Sequelize);
-const ProfileModel = require('./profile')(sequelize,Sequelize);
-const TeamModel = require('./team')(sequelize,Sequelize);
+// 모델 불러오기
+const PlayerModel = require('./Player')(sequelize, Sequelize); 
+const TeamModel = require('./Team')(sequelize, Sequelize); 
+const ProfileModel = require('./Profile')(sequelize, Sequelize); 
 
-//모델간 관계 연결
-// 1) player : profile  >>>  1:1 관계
+// 모델간 관계 연결
+// 1) Player : Profile = 1 : 1
 // 하나의 선수당 하나의 프로필을 가짐
-PlayerModel.hasOne(ProfileModel,{
-  //cascade 옵션 : player 가 수정, 삭제되는 경우 profile 도 삭제/ 업데이트 하게!
-  onDelete : 'CASCADE',
-  onUpdate : 'CASCADE',
-  // profileModel 에 'profile_id' 이름의 fk 생성
-  foreignKey : 'player_id',
-  // playetModel 'player_id' 컬럼 참조
-  sourceKey : 'player_id'
+PlayerModel.hasOne(ProfileModel, { 
+  // CASCADE 옵션: Player가 삭제/수정되는 경우 Profile도 함께 삭제/업데이트
+  onDelete: 'CASCADE', 
+  onUpdate: 'CASCADE',
+  // ProfileModel에 'player_id' 이름의 fk 생성
+  foreignKey: 'player_id',
+  // PlayerModel 'player_id' 컬럼 참조
+  sourceKey: 'player_id'
 });
-ProfileModel.belongsTo(PlayerModel,{
-  // profileModel에 'player_id' fk 생성
-  foreignKey : 'player_id',
-  // 참조하게 될 playerModel의 키는 'player_id'
-  targetKey : 'player_id'
-});
+ProfileModel.belongsTo(PlayerModel, {
+  // ProfileModel에 'player_id' fk 생성
+  foreignKey: 'player_id',
+  // 참조하게 될 PlayerModel의 키는 'player_id' 
+  targetKey: 'player_id'
+})
 
-// 2) Team : Player >>> 1 : N
-// 하나의 팀에는 여러명의 선수가 존재
-TeamModel.hasMany(PlayerModel,{
-  // PlayerModel 에 'team_id'fk 생성
-  foreignKey :'team_id',
-  // TeamModel 에서 참조될 키가 'team_id'
+// 2) Team : Player = 1: N
+// 한 팀에는 여러 명의 선수가 존재
+TeamModel.hasMany(PlayerModel, {
+  // PlayerModel에 'team_id' fk 생성
+  foreignKey: 'team_id',
+  // TeamModel에서 참조될 키가 'team_id'
   sourceKey: 'team_id'
 });
-PlayerModel.belongsTo(TeamModel,{
+PlayerModel.belongsTo(TeamModel, {
   // PlayerModel에 'team_id' fk 생성
-  foreignKey : 'team_id',
+  foreignKey: 'team_id',
   // 참조하게 될 TeamModel의 키는 'team_id'
-  targetKey : 'team_id'
+  targetKey: 'team_id'
 });
-
-
-
-
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-//db : {sequelize : ... ,
-//      Sequelzie : ... ,
-//     } 
+// db = { sequelize: sequelize, Sequelize: Sequelize }
+
 db.Player = PlayerModel;
 db.Team = TeamModel;
 db.Profile = ProfileModel;
+// db = { sequelize: sequelize, Sequelize: Sequelize, 
+//          Player: PlayerModel, Team: TeamMode, Profile: ProfileModel }
 
-//db 객체 탈출! 다른 파일에서 이 객체를 사용할거야
 module.exports = db;
+// db 객체를 모듈로 내보냄 (-> 다른 파일에서 db 모듈을 사용할 예정)

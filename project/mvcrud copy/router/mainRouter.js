@@ -12,7 +12,6 @@ mainRouter.post('/member', mainController.memberSignUp);
 mainRouter.put('/member', mainController.memberUpdate);
 mainRouter.delete('/member', mainController.memberDelete);
 
-
 mainRouter.post('/signin', mainController.memberSignIn);
 
 

@@ -2,6 +2,7 @@ const mysql =require('mysql2');
 /**
  * DB 연결객체 
  */
+// //at home
 // const conn = mysql.createConnection({
 //   host : 'localhost',
 //   user : 'user',
@@ -9,6 +10,7 @@ const mysql =require('mysql2');
 //   database : 'codingon'
 // });
 
+// at SeSAC
 const conn = mysql.createConnection({
   host : 'localhost',
   user : 'user',
@@ -36,9 +38,7 @@ function checkid(id) {
   });
 }
 
-
-// memberExCheck 함수는 그대로 유지
-
+//
 function signUp(data) {
   return new Promise((resolve, reject) => {
     const sql = `INSERT INTO member (userid, username, userpassword, singuptime) VALUES (?, ?, ?, ?)`;
@@ -53,19 +53,20 @@ function signUp(data) {
 });  
 }
 
-function getid(data){
-  return new Promise((resolve, reject) => {
-    const sql = `select * from member where id = ?`;
-    conn.query(sql, [data.uid], (err, rows) => {
-    if (err) {
-      console.error('Error: from getid() >> model/mainModel', err);
-      return reject(err);
-    }else {
-      resolve(rows.id);
-    }
-  });
-}); 
-}
+// //사용 안함
+// function getid(data){
+//   return new Promise((resolve, reject) => {
+//     const sql = `select * from member where id = ?`;
+//     conn.query(sql, [data.uid], (err, rows) => {
+//     if (err) {
+//       console.error('Error: from getid() >> model/mainModel', err);
+//       return reject(err);
+//     }else {
+//       resolve(rows.id);
+//     }
+//   });
+// }); 
+// }
 
 function signInF(data){
   return new Promise((resolve, reject) => {
@@ -80,6 +81,7 @@ function signInF(data){
   });
 }); 
 }
+
 /**
  * model/mainModel >>memberSignUp() 회원가입하는 구문, 
  * 
@@ -115,8 +117,9 @@ exports.memberExCheck = async (data, callback) => {
   }
 };
 
-//체크할것 1 . 아이디가 존재 하는지
-//체크할것 2 . 아이디가 존재 한다면, 비밀번호도 일치 하는지.
+/**
+ * memberignIn
+ */
 exports.memberSignIn = async (data, callback) => {
   try {
     // 1. 아이디 존재 여부 확인
@@ -167,6 +170,12 @@ exports.showUserInfo = ( userId ) => {
   });
 };
 
+/**
+ * 
+ * 변경할데이터 받아서 업데이트!
+ * @param {*} data 
+ * @param {*} callback 응답결과/callback 에 true, falsee 돌려주기
+ */
 exports.memberUpdate = (data, callback) => {
   const sql = `UPDATE member SET username=?, userpassword=? WHERE userid=?`;
   conn.query(sql, [data.uname, data.upw, data.uid], (err, result) => {
@@ -178,6 +187,13 @@ exports.memberUpdate = (data, callback) => {
     callback(true);
   });
 };
+
+/**
+ * 
+ * 삭제할 데이터 찾아서 삭제!
+ * @param {*} data 
+ * @param {*} callback 응답결과/callback 에 true, falsee 돌려주기
+ */
 exports.memberDelete = (data, callback) => {
   const sql = `Delete from member WHERE userid=?`;
   conn.query(sql, [data.uid], (err, result) => {
