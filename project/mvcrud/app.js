@@ -1,6 +1,6 @@
 const express = require('express');
 const mainMiddleWare = require('./middleware/mainMiddleware');
-const mainRouter = require('./router/mainRouter');
+
 const portNo = 8080;
 const app = express();
 

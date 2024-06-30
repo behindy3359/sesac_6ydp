@@ -7,7 +7,10 @@ exports.mainMiddleWare= ( app )=>{
   app.use( '/st' , express.static('public/css') ); // 정적 파일을 찾아 올 디렉토리 설정
   app.use( '/sc' , express.static('public/js') ); // 정적 파일을 찾아 올 디렉토리 설정
   app.use( '/im' , express.static('public/source') ); // 정적 파일을 찾아 올 디렉토리 설정
-  app.use( express.urlencoded({ extended: true }) ); // body-parser 
+  
+  // body-parser 
+  app.use( express.urlencoded({ extended: true }) );
   app.use( express.json() );
+  
   app.use( '/', mainRouter );
 }

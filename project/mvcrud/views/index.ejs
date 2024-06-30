@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
   <%- include('partials/head.ejs') %>
+  <link rel="stylesheet" href="/st/indexstyle.css">
 <body>
   <article>
     <form name="login-form">
-      ㅁ<input type="text" id="userId" placeholder="아이디"><br>
-      ㅁ<input type="password" id="userPw" placeholder="비밀번호"><br>
+      <div class="input-container">
+        <i class="fas fa-user"></i>
+        <input type="text" id="userId" placeholder="아이디">
+      </div>
+      <div class="input-container">
+        <i class="fas fa-key"></i>
+        <input type="password" id="userPw" placeholder="비밀번호">
+      </div>
       <div class="buttongroup">
         <button type="button" onclick="signInFunc()">로그인</button>
       </div>

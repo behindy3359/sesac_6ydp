@@ -40,8 +40,6 @@ GET {{server}}/teams?sort=name_asc
 ###
 GET {{server}}/teams?search=KT
 
-
-
 ###
 GET {{server}}/teams/1
 
