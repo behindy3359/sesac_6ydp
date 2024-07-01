@@ -11,3 +11,4 @@
 **/pacjage-lock.json
 **/*.log
 **/index.sql
+**/.env**

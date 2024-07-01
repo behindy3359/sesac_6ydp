@@ -108,13 +108,11 @@ exports.signinMember = async (req, res) => {
       },
       attributes: ['member_id', 'member_name']
     });
-
     // 사용자 정보를 세션 객체에 저장
     req.session.user = {
       id: result.member_id,
       name: result.member_name
     };
-
     res.status(201).json({ 
       message: '회원가입이 완료되었습니다.', 
       redirect: '/board' 
@@ -128,7 +126,6 @@ exports.profile = async (req, res) => {
   try {
     const { id } = req.params;
     const user = req.session.user;
-
     if (user && user.id === parseInt(id)) {
       const result = await Member.findOne({
         where: { member_id: user.id },

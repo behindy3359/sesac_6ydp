@@ -24,3 +24,26 @@
     function, variable
 0530 - javascript 
     repeat, conditional statement
+0603
+
+0605
+
+0607
+
+0610
+
+0612
+
+0614
+
+0617
+
+0619
+
+0621
+
+0624
+
+0626
+
+0628

@@ -14,6 +14,7 @@ exports.mainMiddleware = (app)=>{
   app.use( '/st' , express.static('public/css') ); // 정적 파일을 찾아 올 디렉토리 설정
   app.use( '/sc' , express.static('public/js') ); // 정적 파일을 찾아 올 디렉토리 설정
   app.use( '/im' , express.static('public/source') ); // 정적 파일을 찾아 올 디렉토리 설정  
+
   app.use(session({
     secret: 'my-tiny-little-small-project-session-secret-key',
     resave: false,
