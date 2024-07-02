@@ -1,9 +1,10 @@
 let username=document.querySelector('#user_info_username');
 let userpasword=document.querySelector('#user_info_userpassword');
 
+/**
+ * 회원정보 수정 요청, 
+ */
 function memberUpdate() {
-  console.log('수정버튼 클릭됨!');
-  console.log(username.value);
   axios({
     method: 'patch',
     url:'/member',
@@ -21,9 +22,11 @@ function memberUpdate() {
     alert('알 수 없는 오류가 발생했습니다.');
   });
 }
+/**
+ * 회원정보 삭제 요청,
+ * 
+ */
 function memberDelete() {
-  console.log('삭제버튼 클릭됨!');
-  console.log('id:',document.querySelector('#user_info_id').value);
   const id = document.querySelector('#user_info_id').value
   axios({
     method: 'delete',
@@ -32,7 +35,7 @@ function memberDelete() {
       member_id : id,
    }
   }) .then((res) => {
-    alert(res.data.message);
+    alert('회원 탈퇴 되었습니다.');
     if (res.data.redirect) {
       window.location.href = res.data.redirect;
     }

@@ -33,7 +33,7 @@ input[type="text"], input[type="password"] {
   border-radius: 4px;
 }
 
-label {
+.label {
   display: flex;
   align-items: center;
   margin-bottom: 10px;

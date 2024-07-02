@@ -3,124 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    .modal {
-      position: absolute;
-      display: none;
-      justify-content: center;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.4);
-    }
-
-    .modal_body {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      top: 50%;
-      width: 500px;
-      height: 500px;
-      padding: 40px;
-      text-align: left;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 3px 0 rgba(34,36,38,0.15);
-      transform: translateY(-50%);
-    }
-
-    .close_btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #aaa;
-      cursor: pointer;
-    }
-
-    .close_btn:hover {
-      color: #000;
-    }
-
-    .modal_title {
-      margin-bottom: 5%;
-    }
-    .modal_post_write_btn{
-      position: relative;
-      background-color: #18aaff;
-      color: white;
-      padding: 5%;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-    }
-    .modal_post_write_btn:hover{
-      background-color: #64c6ff;
-    }
-    .modal_textArea {
-      margin-bottom: 5%;
-      width: 100%;
-      height: 80%;
-    }
-  </style>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
   <h1>안녕하세요</h1>
-  <div class="modal">
-    <div class="modal_body">
-      <form name="modal_post">
-        <button class="close_btn">&times;</button>
-        <input type="checkbox" name="today_check" id="today_check"> 오늘하루 그만보기
-        <button class="modal_post_write_btn">알곘습니다.</button>
-      </form>
+  <% if( !cookieCheck ){ %>
+    <div class="modal">
+      <div class="modal_body">
+        <form name="modal_today">
+          <button type="button" class="close_btn">&times;</button>
+          <textarea id="modal_textArea" class="modal_textArea" style="resize: none;"></textarea>
+          <div class="checkbox_wrapper">
+            <input type="checkbox" name="today_check" id="today_check">
+            <label for="today_check">오늘하루 그만보기 ( * 사실은 1분)</label>
+          </div>
+          <button type="submit" class="modal_btn">알겠습니다.</button>
+        </form>
+      </div>
     </div>
-  </div>
+  <% } %>
 </body>
-<script>
-//모달 관리
-
-  const modal1 = document.querySelector('.modal');
-  const closeBtn = document.querySelector('.close_btn');
-  const form = document.querySelector('form[name="modal_post"]');
-  const btn =document.querySelector('.modal_post_write_btn');
-
-  window.onload = function(){
-    modal1.style.display = 'flex';
-  }
-  
-  btn.addEventListener('click',()=>{
-    let result = document.querySelector('#today_check').checked;
-    console.log(result);
-    axios({
-      method:'post',
-      url:'/setCookie',
-      data:{
-        result
-      }
-    }).then((res)=>{
-      console.log('thankyou');
-    })
-  });
-
-  window.addEventListener('DOMContentLoaded', ()=>{
-    closeBtn.addEventListener('click',function(e){
-      modal1.style.display = 'none';
-    })
-
-    modal1.addEventListener('click', function(e) {
-      if (e.target === modal1) {
-        modal1.style.display = 'none';
-      }
-    });
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      modal1.style.display = 'none';
-    });
-  });
-</script>
+<script src="/public/jscript.js"></script>
 </html>

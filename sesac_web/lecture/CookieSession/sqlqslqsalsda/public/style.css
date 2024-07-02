@@ -1,0 +1,71 @@
+.modal {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal_body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34,36,38,0.15);
+}
+
+.close_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close_btn:hover {
+  color: #000;
+}
+
+.modal_textArea {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkbox_wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox_wrapper input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.modal_btn {
+  background-color: #18aaff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.modal_btn:hover {
+  background-color: #64c6ff;
+}

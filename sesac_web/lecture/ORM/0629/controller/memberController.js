@@ -83,8 +83,7 @@ exports.deleteMember = async (req, res) => {
       
       await target.destroy();
 
-      res.status(201).json({ 
-        message: '탈퇴 되었습니다.', 
+      res.status(201).json({
         redirect: '/' 
       });
     } else {
@@ -109,10 +108,12 @@ exports.signinMember = async (req, res) => {
       attributes: ['member_id', 'member_name']
     });
     // 사용자 정보를 세션 객체에 저장
+    console.log(result);
     req.session.user = {
       id: result.member_id,
       name: result.member_name
     };
+    console.log(req.session.user);
     res.status(201).json({ 
       message: '회원가입이 완료되었습니다.', 
       redirect: '/board' 
@@ -122,6 +123,7 @@ exports.signinMember = async (req, res) => {
     res.status(500).send('이거 만든놈이 몬가 잘못했음');
   }
 };
+
 exports.profile = async (req, res) => {
   try {
     const { id } = req.params;

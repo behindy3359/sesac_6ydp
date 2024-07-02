@@ -9,9 +9,7 @@ create table member(
 insert into member value(null, 'wizardH', 'harryporter', '12345678', '2024-06-20 12:11:00');
 insert into member value(null, '가나', '가나', 'rksk', '2024-06-20 12:11:00');
 
-
 select * from member;
-
 
 -- drop table appointment;
 -- drop table author;

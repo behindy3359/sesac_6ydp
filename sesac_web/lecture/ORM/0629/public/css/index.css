@@ -39,7 +39,6 @@ label {
   margin-bottom: 10px;
 }
 
-
 .signin_btn {
   position: relative;
   background-color: #64c6ff;
@@ -60,7 +59,6 @@ label {
 .signin_btn.active:hover {
   background-color: #18aaff;
 }
-
 
 .links {
   margin-top: 15px;

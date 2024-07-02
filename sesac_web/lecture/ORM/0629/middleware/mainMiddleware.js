@@ -1,7 +1,5 @@
 const express = require('express');
 const session = require('express-session');
-
-
 exports.mainMiddleware = (app)=>{
 
   app.use(express.json());
@@ -16,10 +14,12 @@ exports.mainMiddleware = (app)=>{
   app.use( '/im' , express.static('public/source') ); // 정적 파일을 찾아 올 디렉토리 설정  
 
   app.use(session({
-    secret: 'my-tiny-little-small-project-session-secret-key',
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false,
+    cookie: { 
+      httpOnly : true,
+      secure: false,
       maxAge: 10 * 60 * 1000 //이거 ms 단위임;; 처음에 1000 지정했는데 1초 , 이젠 10분
     } 
   }));
