@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+  <title>Document</title>
+  <style>
+    /* [실습 2] 채팅창 UI 만들기 */
+    .chat-list {
+      background-color: skyblue;
+      height: 500px;
+      padding: 10px;
+      overflow-y: auto;
+    }        
+
+    .chat-list div {
+      margin-top: 3px;
+    }
+
+    .chat-list div div {
+      display: inline-block;
+      padding: 3px;
+    }
+
+    .my-chat {
+      text-align: right;
+    }
+
+    .my-chat div{
+      background-color: yellow;
+      border-radius: 5px 5px 0 5px;
+    }
+
+    .other-chat div{
+      background-color: white;
+      border-radius: 5px 5px 5px 0;
+    }
+
+    /* [실습 3] 채팅창 입장 안내 문구 */
+    .notice {
+      text-align: center;
+      color: #333;
+      font-size: 12px;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body>    
+  <h1>My Chat</h1>
+  <!-- [실습 1] 각 버튼을 누를 때 마다 서버로 메시지 보내기 -->
+  <!-- <button onclick="sayHello()">Hello</button>
+  <button onclick="saySutdy()">Study</button>
+  <button onclick="sayBye()">Bye</button>
+  <p id="from-server"></p> -->
+
+  <!-- [실습 2] 채팅 UI 만들기. -->
+  <main class="chat-box">
+    <div class="chat-list">
+      <div class="my-chat">
+        <div>user1 : msg1</div><div class="time"></div>
+      </div>
+      <div class="other-chat">
+        <div>user2 : msg2</div><div class="time"></div>
+      </div>
+    </div>
+  </main>
+  <form name="request-box">
+    <input type="text" id="nickname" placeholder='닉네임' autofocus/>
+    <!-- <input type="text" id="message" placeholder='메세지' autofocus onkeypress = "if(window.event.keycode==12){join()}" /> -->
+    <button onclick="join()">입장</button>
+    <input type="text">
+  </form>
+</body>
+<script>
+  let socket = io();
+  // const nickObj ={};
+  // const sockets={id: ''};
+  
+  socket.on('connect',()=>{
+    console.log('채팅 서버 연결완료');
+  });
+  
+  socket.on('notice',(msg)=>{
+    document.querySelector('.chat-list').insertAdjacentHTML('beforeend',`<div class="notice">${msg}</div>`)
+  });
+  
+  // document.getElementById('#myInput').addEventListener('keydown',(e)=>{
+    
+  // });
+  
+  function join(){
+    socket.emit('setNick', document.querySelector('#nickname').value);
+  }
+</script>
+</html>

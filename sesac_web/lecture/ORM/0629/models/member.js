@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       unique: true
     },
     member_password: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(70),
       allowNull: false
     },
     is_active: {

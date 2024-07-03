@@ -1,17 +1,16 @@
 {
-  "name": "0629",
+  "name": "0703",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"cross-env NODE_ENV=development nodemon app",
-    "prod":"cross-env NODE_ENV=production nodemon app"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
@@ -21,6 +20,6 @@
     "mysql2": "^3.10.2",
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2",
-    "bcrypt": "^5.1.1"
+    "socket.io": "^4.7.5"
   }
 }

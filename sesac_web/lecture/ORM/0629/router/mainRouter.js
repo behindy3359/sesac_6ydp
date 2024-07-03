@@ -7,5 +7,4 @@ router.get('/', controller.showMain);
 // 로그아웃 요청
 router.get('/logout', controller.logout);
 
-
 module.exports = router;

@@ -2,6 +2,10 @@ const Sequelize = require('sequelize');
 const config = require(__dirname+'/../config/config.js')[process.env.NODE_ENV];
 const db = {};
 
+if(config.database===''){
+  console.log('.env 설정을 확인해주세요');
+}
+
 const sequelize = new Sequelize(
   config.database,
   config.username,

@@ -23,8 +23,8 @@ app.use(session({
     // 세션을 초기값이 지정되지 않은 상태에서도 처음부터 세션을 생성할 건지 
     saveUninitialized: false,
     cookie:{
-      httpOnly:true,
-      secure:false,
+    httpOnly:true,
+    secure:false,
       maxAge :1000 * 100,
     }
 }))

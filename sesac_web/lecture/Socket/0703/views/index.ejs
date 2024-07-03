@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>socket.io 채팅 기능 구현하기!</title>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+  <script>
+    // 소켓 사용을 위한 객체 생성. 편의를 위해서 생성함
+    let socket = io();
+    socket.on('connect',()=>{
+      console.log('클라이언트 연결완료');
+
+    });
+    const btnHello = document.querySelector('#hello-button');
+    const btnStudy = document.querySelector('#Study-button');
+    const btnBye = document.querySelector('#bye-button');
+
+    function sendRequestByBtn(index){
+      switch(index){
+        case 1: msg = 'hello'; break;
+        case 2: msg = 'Study'; break;
+        case 3: msg = 'bye'; break;
+        default : msg ='who send this!'; break;
+      }
+      socket.emit('request',{who: index, msg});
+    };
+    socket.on('answer',(data)=>{
+      document.querySelector('#from-server').textContent = `${data.who} : ${data.msg}`
+    });
+  </script>
+</head>
+<body>
+  <h1>helloworld</h1>
+  <div> 채팅 기능 </div>
+  <button id="hello-button" onclick="sendRequestByBtn(1)">hello</button>
+  <button id="study-button" onclick="sendRequestByBtn(2)">study</button>
+  <button id="button-button" onclick="sendRequestByBtn(3)">bye</button>
+  <div id="from-server"></div>
+</body>
+</html>

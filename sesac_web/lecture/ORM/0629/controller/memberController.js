@@ -1,4 +1,6 @@
+const { compare } = require('bcrypt');
 const db = require('../models/index');
+const encUtil =require('../utils/encrypt')
 const { Member, Board } = db;
 
 exports.showMember = (req, res) => {
@@ -32,7 +34,9 @@ exports.checkMember = async(req,res)=>{
 exports.signupMember = async (req, res) => {
   try {
     console.log("req.body at controller", req.body);
-    const { member_name, member_password } = req.body;
+    const member_name = req.body.member_name;
+    const member_password = encUtil.hashPw(req.body.member_password);
+
     const result = await Member.create({
       member_name,
       member_password,
@@ -99,25 +103,38 @@ exports.deleteMember = async (req, res) => {
 
 exports.signinMember = async (req, res) => {
   try {
-    const { member_name, member_password } = req.body;
+
+    console.log("req.body at controller", req.body);
+    const member_name = req.body.member_name;
+    const member_password = req.body.member_password;
+
     const result = await Member.findOne({
       where: {
-        member_name: member_name,
-        member_password: member_password
+        member_name: member_name
       },
-      attributes: ['member_id', 'member_name']
+      attributes: ['member_id', 'member_name','member_password']
     });
-    // 사용자 정보를 세션 객체에 저장
-    console.log(result);
-    req.session.user = {
-      id: result.member_id,
-      name: result.member_name
-    };
-    console.log(req.session.user);
-    res.status(201).json({ 
-      message: '회원가입이 완료되었습니다.', 
-      redirect: '/board' 
-    });
+
+    if(encUtil.comparePw( member_password, result.member_password)){
+      // 사용자 정보를 세션 객체에 저장
+      console.log(result);
+      req.session.user = {
+        id: result.member_id,
+        name: result.member_name
+      };
+
+      console.log(req.session.user);
+
+      res.status(201).json({ 
+        message: '회원가입이 완료되었습니다.', 
+        redirect: '/board' 
+      });
+      
+    }
+    else{
+      return res.status(500).send('이거 만든놈이 몬가 잘못했음');
+    }
+
   } catch (err) {
     console.error(err);
     res.status(500).send('이거 만든놈이 몬가 잘못했음');
@@ -128,6 +145,7 @@ exports.profile = async (req, res) => {
   try {
     const { id } = req.params;
     const user = req.session.user;
+
     if (user && user.id === parseInt(id)) {
       const result = await Member.findOne({
         where: { member_id: user.id },
