@@ -1,4 +1,3 @@
-const { compare } = require('bcrypt');
 const db = require('../models/index');
 const encUtil =require('../utils/encrypt')
 const { Member, Board } = db;
@@ -6,6 +5,7 @@ const { Member, Board } = db;
 exports.showMember = (req, res) => {
   res.render('member', { title: '어서오세요 회원가입 페이지 입니다!' });
 };
+
 exports.showMembers = async(req, res) => {
   try{
     const result = await Member.findAll();
@@ -32,9 +32,7 @@ exports.checkMember = async(req,res)=>{
 }
 
 exports.signupMember = async (req, res) => {
-  try {
-    console.log("req.body at controller", req.body);
-    const member_name = req.body.member_name;
+  try {const member_name = req.body.member_name;
     const member_password = encUtil.hashPw(req.body.member_password);
 
     const result = await Member.create({
@@ -57,7 +55,7 @@ exports.signupMember = async (req, res) => {
 
 exports.updateMember = async (req, res) => {
   try {
-    const member_password = req.body.member_password;
+    const member_password = encUtil.hashPw(req.body.member_password);
     const user = req.session.user;
     console.log(user.id);
     // 사용자 정보 업데이트
@@ -67,8 +65,8 @@ exports.updateMember = async (req, res) => {
     );
 
     res.status(201).json({ 
-      message: '회원가입이 완료되었습니다.', 
-      redirect: `/member/profile/${user.id}` ,
+      message: '회원정보 수정이 완료되었습니다. 로그인 페이지로 돌아갑니다', 
+      redirect: `/` ,// 정보 수정이 완료되면 로그인 페이지로 이동 `/member/profile/${user.id}`
       user:user 
     });
   } catch (err) {
@@ -78,7 +76,6 @@ exports.updateMember = async (req, res) => {
 };
 
 exports.deleteMember = async (req, res) => {
-  console.log('controller deleteMember' ,req.params);
   const id = req.params.id;
   const user = req.session.user;
   try {
@@ -102,9 +99,8 @@ exports.deleteMember = async (req, res) => {
 };
 
 exports.signinMember = async (req, res) => {
+  
   try {
-
-    console.log("req.body at controller", req.body);
     const member_name = req.body.member_name;
     const member_password = req.body.member_password;
 

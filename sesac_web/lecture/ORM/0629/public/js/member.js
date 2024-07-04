@@ -120,7 +120,7 @@ function signupSubmit(){
       member_password: document.querySelector('#userpassword').value
     }
   }).then((res) => {
-    console.log(res.data);
+    alert('회원가입에 성공했습니다. 로그인 페이지로 돌아갈게요!')
     if (res.data.redirect) {
       window.location.href = res.data.redirect;
     }
@@ -128,4 +128,8 @@ function signupSubmit(){
     console.error('Error:', err);
     alert('알 수 없는 오류가 발생했습니다.');
   });
+}
+
+function toBoards() {
+  window.location.href = '/boards';
 }

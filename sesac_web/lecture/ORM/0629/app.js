@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 // env 변수 설정
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 dotenv.config({
   path: path.resolve(__dirname, `./.env.${process.env.NODE_ENV}`),

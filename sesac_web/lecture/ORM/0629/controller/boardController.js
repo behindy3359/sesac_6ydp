@@ -146,7 +146,6 @@ exports.updateBoard = async (req, res) => {
   }
 };
 
-
 exports.deleteBoard = async (req, res) => {
   try {
     const { id } = req.params;

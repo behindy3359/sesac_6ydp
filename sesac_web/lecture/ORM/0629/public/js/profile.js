@@ -12,7 +12,7 @@ function memberUpdate() {
       member_password : document.querySelector('#user_info_userpassword').value
     }
   }) .then((res) => {
-    alert('비밀번호가 변경되었습니다.');
+    alert(res.data.message);
     if (res.data.redirect) {
       window.location.href = res.data.redirect;
     }
