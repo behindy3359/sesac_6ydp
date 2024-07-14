@@ -16,7 +16,6 @@ const { sequelize } = require('./models/index');
 const { mainMiddleware } = require('./middleware/mainMiddleware');
 const { routerMiddleware } = require('./middleware/routerMiddleware');
 
-
 mainMiddleware(app);
 routerMiddleware(app);
 

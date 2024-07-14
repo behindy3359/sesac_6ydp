@@ -1,17 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
   const Member = sequelize.define('member', {
     member_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
     },
-    member_name: {
-      type: DataTypes.STRING(10),
+    name: {
+      type: DataTypes.STRING(20),
+      allowNull: false
+    },
+    nick: {
+      type: DataTypes.STRING(20),
       allowNull: false,
       unique: true
     },
-    member_password: {
+    email: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+      unique: true
+    },
+    password: {
       type: DataTypes.STRING(70),
       allowNull: false
     },
@@ -19,12 +28,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true
+    },
+    admin: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     }
   }, {
     freezeTableName: true,
     timestamps: true,
     underscored: true,
     paranoid: true,
+    tableName: 'MEMBER',
     hooks: {
       beforeDestroy: async (member, options) => {
         await member.deactivate();
@@ -33,16 +48,19 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Member.associate = (models) => {
-    Member.hasMany(models.Board, {
-      foreignKey: 'board_writer',
+    // 예시: Review 모델과의 관계 설정
+    Member.hasMany(models.Review, {
+      foreignKey: 'member_id',
       sourceKey: 'member_id'
     });
+    // 다른 모델과의 관계도 여기에 추가할 수 있습니다.
   };
 
   Member.prototype.deactivate = async function() {
-    await this.update({ is_active: false });
-    const boards = await this.getBoards();
-    await Promise.all(boards.map(board => board.update({ is_active: false })));
+    await this.update({ is_actived: false });
+    // 관련된 리뷰들도 비활성화하는 로직을 추가할 수 있습니다.
+    const reviews = await this.getReviews();
+    await Promise.all(reviews.map(review => review.update({ is_active: false })));
   };
 
   return Member;

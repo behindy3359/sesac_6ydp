@@ -1,0 +1,46 @@
+/* @import url(reset.css);
+@import url(core.css);
+@import url(common.css); */
+
+/* index 페이지  */
+.main-ai {
+    padding: 100px;
+    height: 250px;
+    /* margin-top: 30px; */
+    padding: 50px 20px;
+    background-color: #e6e5e5;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.main-ai button {
+    width: 120px;
+    height: 50px;
+    /* margin-top: 10px; */
+    /* padding: 10px 20px; */
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    /* font-size: 18px; */
+}
+
+.main-banner-img-container {
+    width: 80%;
+}
+
+
+
+
+
+
+/* ai 페이지  */
+
+
+
+
+/* exhibition 페이지  */

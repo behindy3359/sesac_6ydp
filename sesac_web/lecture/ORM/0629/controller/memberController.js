@@ -32,7 +32,8 @@ exports.checkMember = async(req,res)=>{
 }
 
 exports.signupMember = async (req, res) => {
-  try {const member_name = req.body.member_name;
+  try {
+    const member_name = req.body.member_name;
     const member_password = encUtil.hashPw(req.body.member_password);
 
     const result = await Member.create({
@@ -114,6 +115,7 @@ exports.signinMember = async (req, res) => {
     if(encUtil.comparePw( member_password, result.member_password)){
       // 사용자 정보를 세션 객체에 저장
       console.log(result);
+      
       req.session.user = {
         id: result.member_id,
         name: result.member_name
