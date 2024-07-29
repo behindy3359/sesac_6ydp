@@ -8,8 +8,8 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .iAmButton {
+    animation: App-logo-spin infinite 3s linear;
   }
 }
 
@@ -41,5 +41,5 @@ body{
   background-color: rgb(148, 148, 148);
 }
 hr{
-  border-color: yellow;
+  border-color: slategray;
 }
