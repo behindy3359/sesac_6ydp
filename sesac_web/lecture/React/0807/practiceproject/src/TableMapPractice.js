@@ -38,19 +38,21 @@ const TableMapPractice = () => {
 
   }
 
-  const searchComment = ()=>{
-    console.log(inputSearch);
-    console.log(searchType);
-    
+  const searchComment = (typeSearch)=>{
+
     
     let newSearch;
-    switch (searchType){
+    switch (typeSearch){
       case 'name':
         newSearch = comment.filter((comment)=>comment.name.includes(inputSearch));
         setResult(newSearch);
         break;
       case 'title':
         newSearch = comment.filter((comment)=>comment.title.includes(inputSearch));
+        setResult(newSearch);
+        break;
+      case 'all':
+        newSearch = comment;
         setResult(newSearch);
         break;
       default :
@@ -97,13 +99,14 @@ const TableMapPractice = () => {
       onChange={(e) => {
         setInputSearch(e.target.value);
       }}></input>
-    <button onClick={searchComment}>검색</button>
+    <button onClick={()=>{searchComment(searchType)}}>검색</button>
+    <button onClick={(e)=>{searchComment('all')}}>전체</button>
     
     <table border={1} align='center'>
       <tr>
       <td>번호</td>
+      <td>작성자</td>
       <td>제목</td>
-      <td>내용</td>
       </tr>
       {comment.map((value) => (
         <tr key={value.id}>
@@ -118,8 +121,8 @@ const TableMapPractice = () => {
     <table border={1} align='center'>
       <tr>
       <td>번호</td>
+      <td>작성자</td>
       <td>제목</td>
-      <td>내용</td>
       </tr>
       {result.map((value) => (
         <tr key={value.id}>
