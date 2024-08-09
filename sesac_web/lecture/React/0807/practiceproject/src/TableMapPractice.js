@@ -23,7 +23,7 @@ const TableMapPractice = () => {
 
   const addComment =()=>{
     if (!inputName.trim()||!inputTitle.trim()) {
-        return console.log('이름이나 제목을 확인해주세요');
+      return console.log('이름이나 제목을 확인해주세요');
     }
 
     const newComment = comment.concat({
@@ -39,7 +39,6 @@ const TableMapPractice = () => {
   }
 
   const searchComment = (typeSearch)=>{
-
     
     let newSearch;
     switch (typeSearch){
@@ -69,7 +68,7 @@ const TableMapPractice = () => {
         type="text" placeholder='작성자' 
         value={inputName}
         onChange={(e) => {
-            setInputName(e.target.value);
+          setInputName(e.target.value);
         }}></input>
       
       <label>제목 : </label>
@@ -77,14 +76,14 @@ const TableMapPractice = () => {
         type="text" placeholder='제목'
         value={inputTitle}
         onChange={(e) => {
-            setInputTitle(e.target.value);
+          setInputTitle(e.target.value);
         }}></input>
 
       <button onClick={addComment}>작성 하기</button>
     </fieldset>
     
     <select type='select' id='selector' onChange={(e) => {
-            setSearchType(e.target.value);
+          setSearchType(e.target.value);
         }}>
       {/* {comment.map((value)=>{
         <option value={value.id}>{value.name} </option>
@@ -100,7 +99,7 @@ const TableMapPractice = () => {
         setInputSearch(e.target.value);
       }}></input>
     <button onClick={()=>{searchComment(searchType)}}>검색</button>
-    <button onClick={(e)=>{searchComment('all')}}>전체</button>
+    <button onClick={()=>{searchComment('all')}}>전체</button>
     
     <table border={1} align='center'>
       <tr>

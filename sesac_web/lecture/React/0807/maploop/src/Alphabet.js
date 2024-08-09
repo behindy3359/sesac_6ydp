@@ -69,7 +69,7 @@ export default function Alphabet() {
 
         if (e.keyCode === 13) {
             await addAlpha();
-    
+            
             if(alphabet.length > 10){
                 const deleteId = Math.floor(Math.random()*10 + 1);
                 alphabet.splice(deleteId,1);
@@ -83,11 +83,8 @@ export default function Alphabet() {
         <div>
             <h1>Map & Filter</h1>
             <ol>
-                {alphabet.map((value) => (
-                    <li key={value.id}
-                    onDoubleClick={() => deleteAlpha(value.id)}
-                >{value.alpha}</li>
-                ))}
+                {
+                    alphabet.map((value) => (<li key={value.id}onDoubleClick={() => deleteAlpha(value.id)}>{value.alpha}</li>))}
             </ol>
 
             {/* 알파벳 추가해보기 */}

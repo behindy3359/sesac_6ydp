@@ -1,0 +1,34 @@
+.header{
+  width: 100%;
+  height: 50px;
+  background-color: rgb(93, 209, 255);
+}
+.header > p {
+  padding-top: 15px;
+  font-size: larger;
+  color: white;
+  font-weight: 700;
+}
+.post-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-wrapper{
+  border-radius: 10px;
+  margin: 5px;
+  width: 80%;
+  height: 10%;
+  background-color: rgb(196, 238, 255);
+  box-shadow: 5px 5px 5px 5px rgb(191, 191, 191);
+}
+.post-title {
+  text-align: left;
+  margin-left: 20px;
+}
+.post-title-postno{
+  color: rgb(16, 168, 228);
+}
+.post-title-title{
+  opacity: 0.5;
+}
