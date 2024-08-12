@@ -1,18 +1,12 @@
 .App {
   text-align: center;
+  color: gray;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-td { 
-  padding: 10px;
-}
-.comment-table { 
-  border-spacing: 0;
-}
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

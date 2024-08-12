@@ -5,7 +5,7 @@ import TableMapPractice from './TableMapPractice';
 function App() {
   return (
     <div className="App">
-      <MapPractice/>
+      {/* <MapPractice/> */}
       <hr/>
       <TableMapPractice/>
     </div>

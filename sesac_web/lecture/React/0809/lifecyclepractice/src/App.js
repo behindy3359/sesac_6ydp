@@ -1,5 +1,4 @@
 import './App.css';
-import './postList.css';
 import LifeCycleClass from './LifeCycleClass';
 import LifeCycleFunc from './LifeCycleFunc';
 import PostList from './PostList';

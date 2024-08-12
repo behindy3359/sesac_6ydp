@@ -1,0 +1,51 @@
+@import './utils';
+@import './variable';
+
+
+.container{
+  display: flex;
+  align-items: center;
+  background-color: black;
+  .box{
+    margin: 10px;
+    opacity: 0.5;
+    @include box(150px);
+    // width: 100px;
+    // height: 100px;
+    &.red{
+      background-color: red;
+      animation: blink-red 1.2 linear 0 infinite running slidein;
+    }
+    &.yellow{
+      background-color: yellow;
+      animation: blink-yellow 1.2 linear 0 infinite running slidein;
+    }
+    &.green{
+      background-color: green;
+      animation: blink-green 1.2 linear 0 infinite running slidein;
+    }
+    &:hover{
+      $box-animation :$animation-duration * 2;
+      opacity: 1;
+      transform: scale(1.2);
+      transition: transform $box-animation;
+    }
+  }
+}
+
+
+.btn{
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+}
+.btn-primary{
+  @extend .btn;
+  background-color: $color-third;
+}
+
+@media (max-width : $breakpoint-sm ){
+  .container{
+    flex-direction: column;
+  }
+}

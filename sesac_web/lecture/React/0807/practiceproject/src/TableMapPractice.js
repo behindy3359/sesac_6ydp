@@ -117,7 +117,7 @@ const TableMapPractice = () => {
     </table>
     <hr/>
     { result.length ===0?'검색 결과가 없습니다.' :
-    <table border={1} align='center'>
+    <table className='comment-table'>
       <tr>
       <td>번호</td>
       <td>작성자</td>
