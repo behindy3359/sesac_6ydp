@@ -1,4 +1,27 @@
+@import './variable';
+
 @mixin move($distanceX,$distanceY){
-  top: $distanceX;
-  left: $distanceY;
+  transform: translate($distanceX, $distanceY);
+}
+
+@mixin animation($color-ball, $distance){
+  animation: #{$color-ball} 3s linear infinite;
+
+  @keyframes #{$color-ball} {
+      0% {
+        @include move( 0 , 0 );
+      }
+      25% {
+        @include move( 0, $distance);
+      }
+      50% {
+        @include move( $distance , $distance  );
+      }
+      75% {
+        @include move( $distance , 0 );
+      }
+      100% {
+        @include move( 0, 0 );
+      }
+  }
 }

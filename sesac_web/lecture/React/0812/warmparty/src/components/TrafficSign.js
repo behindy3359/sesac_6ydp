@@ -1,13 +1,14 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
-import ''
+import '../styles/TrafficSign.scss'
 
 
 const TrafficSign = () => {
   return (
     <div>
       <div className='styled-container'>
-        <div className=''></div>
+        <div className='styled-ball red-ball'></div>
+        <div className='styled-ball yellow-ball'></div>
+        <div className='styled-ball green-ball'></div>
       </div>
     </div>
   )

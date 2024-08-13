@@ -1,6 +1,23 @@
 @import './utils';
 @import './variable';
 
+@keyframes moveAnimate-red {
+  0% {
+    @include move(0 * $disMulred px, 0 * $disMulred px);
+  }
+  25% {
+    @include move(0 * $disMulred px, 100 * $disMulred px);
+  }
+  50% {
+    @include move(100 * $disMulred px, 100 * $disMulred px);
+  }
+  75% {
+    @include move(100 * $disMulred px, 0 * $disMulred px);
+  }
+  100% {
+    @include move(0 * $disMulred px, 0 * $disMulred px);
+  }
+}
 
 .container{
   display: flex;
@@ -13,15 +30,15 @@
     // width: 100px;
     // height: 100px;
     &.red{
-      background-color: red;
+      background-color: $color-first;
       animation: blink-red 1.2 linear 0 infinite running slidein;
     }
     &.yellow{
-      background-color: yellow;
+      background-color: $color-second;
       animation: blink-yellow 1.2 linear 0 infinite running slidein;
     }
     &.green{
-      background-color: green;
+      background-color: $color-third;
       animation: blink-green 1.2 linear 0 infinite running slidein;
     }
     &:hover{
