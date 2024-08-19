@@ -1,0 +1,20 @@
+.Box1{
+  border: 4px solid black;
+  margin: 4px;
+  background-color: rgb(255, 195, 173);
+}
+.Box2{
+  border: 4px solid blue;
+  margin: 4px;
+  background-color: yellowgreen;
+}
+.Box3{
+  border: 4px solid red;
+  margin: 4px;
+  background-color: azure;
+}
+.Box4{
+  border: 4px solid green;
+  margin: 4px;
+  background-color: blanchedalmond;
+}
