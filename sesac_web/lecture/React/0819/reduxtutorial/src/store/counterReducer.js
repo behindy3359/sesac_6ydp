@@ -2,6 +2,8 @@
 // 액션 생성자 정의
 // - 이를 통해서 컴포넌트에 액션을 쉽게 디스패치 할 수 있음.
 
+const PLUS = 'counter/PLUS';
+const MINUS = 'counter/MINUS';
 
 /**
  * -'type' 반드시 포함/ 이름도 변경 불가능!
@@ -10,8 +12,8 @@
  * **추가 데이터 종류
  * payload / meta / error
  */
-export const plus = ()=>({type : 'counter/PLUS'});
-export const minus = ()=>({type: 'counter/MINUS'});
+export const plus = ()=>({type : PLUS});
+export const minus = ()=>({type: MINUS});
 
 //state 초기값 정의
 const initialState ={
@@ -19,9 +21,9 @@ const initialState ={
 }
 const counterReducer = (state = initialState, action) =>{
   switch(action.type){
-    case "counter/PLUS" :
+    case PLUS :
       return {number : state.number + 1};
-    case "counter/MINUS" :
+    case MINUS :
       return {number : state.number - 1};
     default:
       console.log('how can you reach here?');
