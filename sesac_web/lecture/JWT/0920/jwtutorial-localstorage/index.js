@@ -61,11 +61,12 @@ app.post('/token',(req,res)=>{
   }
 })
 
-// app.get('/logout',(req,res)=>{
-//   res.render('login');
-// });
+app.get('/logout', (req,res)=>{
+  req.session.destroy();
+  res.redirect('/login');
+});
 
-app.get('/login',(req,res)=>{
+app.get('/login', (req,res)=>{
   res.render('login');
 });
 
